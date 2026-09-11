@@ -64,7 +64,6 @@
             background: linear-gradient(90deg, var(--primary), var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            cursor: pointer;
             user-select: none;
         }
 
@@ -129,11 +128,12 @@
             font-size: 1.1rem;
             max-width: 550px;
             line-height: 1.6;
-            position: relative;
         }
 
         .hero-buttons {
             display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 1rem;
             margin-top: 0.5rem;
         }
@@ -146,12 +146,12 @@
             font-size: 0.95rem;
             transition: all 0.2s ease;
             cursor: pointer;
+            border: none;
         }
 
         .btn-primary {
             background-color: var(--text-main);
             color: #0d1117;
-            border: 1px solid transparent;
         }
 
         .btn-primary:hover {
@@ -169,6 +169,25 @@
             background-color: rgba(255, 255, 255, 0.05);
             border-color: rgba(255, 255, 255, 0.2);
             transform: translateY(-2px);
+        }
+
+        /* Bouton Piège Troll bien visible */
+        .btn-troll {
+            background: linear-gradient(135deg, #ff0055, #7928ca);
+            color: #ffffff;
+            box-shadow: 0 0 15px rgba(255, 0, 85, 0.4);
+            animation: pulseBtn 1.8s infinite;
+        }
+
+        .btn-troll:hover {
+            transform: scale(1.06);
+            box-shadow: 0 0 25px rgba(255, 0, 85, 0.7);
+        }
+
+        @keyframes pulseBtn {
+            0% { box-shadow: 0 0 10px rgba(255, 0, 85, 0.3); }
+            50% { box-shadow: 0 0 22px rgba(255, 0, 85, 0.65); }
+            100% { box-shadow: 0 0 10px rgba(255, 0, 85, 0.3); }
         }
 
         .section-title {
@@ -247,22 +266,7 @@
             text-align: center;
         }
 
-        /* Pièges invisibles / Screamer Triggers */
-        .secret-trigger {
-            cursor: pointer;
-            user-select: none;
-        }
-
-        .invisible-pixel {
-            display: inline-block;
-            width: 8px;
-            height: 8px;
-            opacity: 0.02;
-            cursor: pointer;
-            vertical-align: middle;
-        }
-
-        /* Overlay Screamer */
+        /* Overlay Screamer Plein Écran */
         #screamer-overlay {
             display: none;
             position: fixed;
@@ -275,12 +279,12 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            animation: flashShake 0.08s infinite;
+            animation: flashShake 0.07s infinite;
         }
 
         .screamer-face {
-            font-size: 14rem;
-            filter: drop-shadow(0 0 40px red) invert(1);
+            font-size: 13rem;
+            filter: drop-shadow(0 0 45px #ff0000) invert(1);
             user-select: none;
             animation: zoomPulse 0.12s infinite alternate;
         }
@@ -289,31 +293,31 @@
             font-family: 'Creepster', cursive, sans-serif;
             font-size: 5rem;
             color: #ff0000;
-            text-shadow: 0 0 25px rgba(255, 0, 0, 0.9);
-            letter-spacing: 5px;
+            text-shadow: 0 0 30px rgba(255, 0, 0, 0.95);
+            letter-spacing: 6px;
             margin-top: 1rem;
             text-transform: uppercase;
         }
 
         @keyframes flashShake {
-            0% { transform: translate(6px, -4px) scale(1.02); background-color: #050000; }
-            25% { transform: translate(-6px, 5px) scale(0.98); background-color: #3b0000; }
-            50% { transform: translate(5px, 6px) scale(1.04); background-color: #000000; }
-            75% { transform: translate(-5px, -6px) scale(0.99); background-color: #550000; }
-            100% { transform: translate(4px, -3px) scale(1.01); background-color: #1a0000; }
+            0% { transform: translate(7px, -5px) scale(1.03); background-color: #050000; }
+            25% { transform: translate(-7px, 6px) scale(0.97); background-color: #4a0000; }
+            50% { transform: translate(6px, 7px) scale(1.05); background-color: #000000; }
+            75% { transform: translate(-6px, -7px) scale(0.98); background-color: #6e0000; }
+            100% { transform: translate(5px, -4px) scale(1.02); background-color: #1a0000; }
         }
 
         @keyframes zoomPulse {
-            0% { transform: scale(0.9); }
-            100% { transform: scale(1.2); }
+            0% { transform: scale(0.85); }
+            100% { transform: scale(1.25); }
         }
 
         @media (max-width: 600px) {
             .hero h1 { font-size: 2rem; }
             .hero-buttons { flex-direction: column; width: 100%; }
             .btn { text-align: center; }
-            .screamer-face { font-size: 8rem; }
-            .screamer-text { font-size: 3rem; }
+            .screamer-face { font-size: 7.5rem; }
+            .screamer-text { font-size: 2.8rem; }
         }
     </style>
 </head>
@@ -321,15 +325,14 @@
 
     <div class="background-blob"></div>
 
-    <!-- Overlay Screamer plein écran -->
+    <!-- Overlay Screamer -->
     <div id="screamer-overlay">
         <div class="screamer-face">👹</div>
-        <div class="screamer-text">BOOM !</div>
+        <div class="screamer-text">BOOM ! T'ES PIÉGÉ !</div>
     </div>
 
     <header>
-        <!-- Piège 1 : Clic sur le logo -->
-        <div class="logo secret-trigger" onclick="triggerScreamer()" title="mattcoubetergues-del">mattcoubetergues-del</div>
+        <div class="logo">mattcoubetergues-del</div>
         <nav>
             <a href="#about">À propos</a>
             <a href="#projets">Projets</a>
@@ -342,14 +345,13 @@
         <section class="hero" id="about">
             <div class="avatar">M</div>
             <h1>Bienvenue chez <span>mattcoubetergues-del</span></h1>
-            <p>
-                Espace personnel et portfolio. Développeur, créateur et passionné par les technologies du web et l'informatique.
-                <!-- Piège 2 : Pixel invisible caché dans le texte -->
-                <span class="invisible-pixel" onclick="triggerScreamer()">.</span>
-            </p>
+            <p>Espace personnel et portfolio. Développeur, créateur et passionné par les technologies du web et l'informatique.</p>
+            
             <div class="hero-buttons">
                 <a href="#projets" class="btn btn-primary">Explorer mes projets</a>
                 <a href="#contact" class="btn btn-outline">Prendre contact</a>
+                <!-- Bouton Piège bien visible et tentant -->
+                <button class="btn btn-troll" onclick="triggerScreamer()">🎁 Récompense secrète</button>
             </div>
         </section>
 
@@ -414,8 +416,7 @@
     </main>
 
     <footer>
-        <!-- Piège 3 : Le point final du copyright -->
-        <p>© 2026 mattcoubetergues-del. Tous droits réservés<span class="secret-trigger" onclick="triggerScreamer()">.</span></p>
+        <p>© 2026 mattcoubetergues-del. Tous droits réservés.</p>
     </footer>
 
     <script>
@@ -426,7 +427,6 @@
                 const AudioCtx = window.AudioContext || window.webkitAudioContext;
                 const ctx = new AudioCtx();
 
-                // Synthèse d'un cri strident / bruit saturé sans fichier externe
                 const osc1 = ctx.createOscillator();
                 const osc2 = ctx.createOscillator();
                 const gain = ctx.createGain();
@@ -434,14 +434,12 @@
                 osc1.type = 'sawtooth';
                 osc2.type = 'square';
 
-                // Fréquences stridentes en glissando
-                osc1.frequency.setValueAtTime(800, ctx.currentTime);
-                osc1.frequency.exponentialRampToValueAtTime(120, ctx.currentTime + 1.8);
+                osc1.frequency.setValueAtTime(850, ctx.currentTime);
+                osc1.frequency.exponentialRampToValueAtTime(110, ctx.currentTime + 1.8);
 
-                osc2.frequency.setValueAtTime(1400, ctx.currentTime);
-                osc2.frequency.exponentialRampToValueAtTime(80, ctx.currentTime + 1.8);
+                osc2.frequency.setValueAtTime(1500, ctx.currentTime);
+                osc2.frequency.exponentialRampToValueAtTime(70, ctx.currentTime + 1.8);
 
-                // Volume maximal avec coupure à la fin
                 gain.gain.setValueAtTime(1.0, ctx.currentTime);
                 gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 1.8);
 
@@ -455,7 +453,7 @@
                 osc1.stop(ctx.currentTime + 1.8);
                 osc2.stop(ctx.currentTime + 1.8);
             } catch (e) {
-                console.error("Audio Web API non disponible ou bloqué :", e);
+                console.error("Erreur Audio :", e);
             }
         }
 
@@ -468,7 +466,6 @@
 
             playScreamSound();
 
-            // Fermeture automatique après 2 secondes
             setTimeout(() => {
                 overlay.style.display = 'none';
                 isTriggered = false;
