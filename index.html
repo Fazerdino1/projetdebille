@@ -3,416 +3,493 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BIENVENUE CHEZ MATTCOUBETERGUES-DEL LE BOSS DU NET</title>
+    <title>🚨 SITE OFFICIEL DU ROI MATTCOUBETERGUES-DEL 🚨</title>
     <style>
         * {
             box-sizing: border-box;
-            cursor: crosshair;
+            cursor: grab;
         }
 
         body {
             margin: 0;
             padding: 0;
-            background: repeating-radial-gradient(circle, #ff00ea, #ffe600 10%, #00ffff 20%, #00ff2f 30%, #ff0000 40%);
-            background-size: 80px 80px;
-            font-family: 'Comic Sans MS', 'Chalkboard SE', cursive, sans-serif;
-            color: #000;
-            text-align: center;
+            font-family: "Comic Sans MS", "Chalkboard SE", fantasy, sans-serif;
+            background: repeating-linear-gradient(45deg, #ff0000, #ff0000 30px, #ffff00 30px, #ffff00 60px, #00ff00 60px, #00ff00 90px, #00ffff 90px, #00ffff 120px, #ff00ff 120px, #ff00ff 150px);
+            background-size: 300px 300px;
+            animation: bgSlide 1.5s linear infinite;
             overflow-x: hidden;
-            animation: bgShift 2s linear infinite;
+            text-align: center;
         }
 
-        @keyframes bgShift {
+        @keyframes bgSlide {
             0% { background-position: 0 0; }
-            100% { background-position: 80px 80px; }
+            100% { background-position: 300px 300px; }
         }
 
-        /* Bannière clignotante */
-        .marquee-container {
-            background-color: #000;
-            color: #00ff00;
-            font-size: 1.8rem;
+        /* Barre d'alerte en folie */
+        .marquee-top {
+            background: #000;
+            color: #ff0055;
+            font-size: 2rem;
             font-weight: 900;
-            padding: 10px 0;
-            border-bottom: 5px dashed yellow;
+            padding: 12px;
+            border-bottom: 8px dashed #00ff00;
+            text-shadow: 0 0 10px #ff0000;
         }
 
-        header {
-            padding: 2rem 1rem;
-            background: rgba(255, 255, 255, 0.85);
-            margin: 20px auto;
+        /* Gros titres chaotiques */
+        .header-box {
+            background: rgba(255, 255, 255, 0.9);
+            border: 12px groove #ff00ea;
             max-width: 900px;
-            border: 8px ridge #ff0055;
-            box-shadow: 12px 12px 0px #000;
+            margin: 30px auto;
+            padding: 25px;
+            box-shadow: 20px 20px 0px #000;
+            transform: rotate(-2deg);
+            animation: wobble 0.6s infinite alternate;
+        }
+
+        @keyframes wobble {
+            0% { transform: rotate(-2deg) scale(0.99); }
+            100% { transform: rotate(2deg) scale(1.02); }
         }
 
         h1 {
-            font-size: 3rem;
-            color: red;
-            text-shadow: 4px 4px 0px yellow, 8px 8px 0px blue;
-            animation: spinTitle 1.5s ease-in-out infinite alternate;
+            font-size: 3.5rem;
+            color: #0026ff;
+            text-shadow: 5px 5px 0px #ffea00, 10px 10px 0px #ff0000;
+            letter-spacing: -2px;
+            margin: 0;
         }
 
-        @keyframes spinTitle {
-            0% { transform: rotate(-3deg) scale(1); }
-            100% { transform: rotate(3deg) scale(1.08); }
+        .spin-infinite {
+            display: inline-block;
+            animation: spinAll 1s linear infinite;
+        }
+
+        @keyframes spinAll {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
         }
 
         .subtitle {
-            font-size: 1.4rem;
-            font-weight: bold;
-            color: purple;
-            background: #ffff00;
+            font-size: 1.5rem;
+            background: #00ff66;
+            color: #000;
             display: inline-block;
-            padding: 5px 15px;
-            border: 2px solid black;
+            padding: 8px 15px;
+            margin-top: 15px;
+            border: 4px solid #000;
+            transform: rotate(3deg);
         }
 
-        /* Zone centrale débile */
-        .content {
+        /* Grille de bêtises */
+        .main-container {
             max-width: 950px;
             margin: auto;
-            padding: 20px;
             display: flex;
             flex-direction: column;
-            gap: 25px;
-            align-items: center;
-        }
-
-        .card-dumb {
-            background: #fff;
-            border: 5px double #000;
+            gap: 30px;
             padding: 20px;
-            width: 100%;
-            box-shadow: 10px 10px 0px rgba(0,0,0,0.5);
-            font-size: 1.2rem;
         }
 
-        .card-dumb h2 {
-            font-size: 2rem;
-            text-decoration: underline wavy red;
+        .card-chaos {
+            background: #ffffffe6;
+            border: 8px ridge #0011ff;
+            padding: 20px;
+            box-shadow: 15px 15px 0px rgba(0,0,0,0.8);
+            position: relative;
         }
 
-        .rainbow-text {
-            background: linear-gradient(to right, red, orange, yellow, green, cyan, blue, violet);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .card-chaos h2 {
             font-size: 2.2rem;
-            font-weight: bold;
-            animation: rainbowAnim 1s infinite alternate;
+            color: #d600aa;
+            text-shadow: 3px 3px 0 #ffe600;
         }
 
-        @keyframes rainbowAnim {
-            0% { filter: hue-rotate(0deg); }
-            100% { filter: hue-rotate(360deg); }
-        }
-
-        /* Compétences absurdes */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 15px;
-            margin-top: 15px;
-        }
-
-        .skill-item {
-            background: #ffeaa7;
-            border: 3px dotted #d63031;
-            padding: 15px;
-            font-size: 1.1rem;
-            transform: rotate(-1deg);
-        }
-        .skill-item:nth-child(even) {
-            transform: rotate(2deg);
-            background: #81ecec;
-        }
-
-        /* Boutons absurdes */
-        .btn-panel {
+        /* Boutons déjantés */
+        .btn-zone {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 20px;
-            margin: 20px 0;
-            position: relative;
-            min-height: 120px;
-            width: 100%;
+            margin-top: 20px;
         }
 
-        .crazy-btn {
+        .btn-dumb {
             font-family: inherit;
-            font-size: 1.4rem;
-            font-weight: bold;
-            padding: 15px 30px;
-            border: 4px outset #fff;
+            font-size: 1.5rem;
+            font-weight: 900;
+            padding: 15px 25px;
+            border: 6px outset #fff;
+            box-shadow: 8px 8px 0px #000;
             cursor: pointer;
-            box-shadow: 5px 5px 0 #000;
+            transition: 0.1s;
         }
 
-        .crazy-btn:active {
-            border: 4px inset #fff;
-            transform: translate(3px, 3px);
-            box-shadow: 2px 2px 0 #000;
+        .btn-dumb:active {
+            border: 6px inset #fff;
+            transform: translate(5px, 5px);
+            box-shadow: 2px 2px 0px #000;
         }
 
-        .btn-music {
-            background: #00b894;
+        .btn-alert {
+            background: #ff0033;
             color: #fff;
+            animation: flashBtn 0.2s infinite alternate;
         }
 
-        .btn-virus {
-            background: #d63031;
+        @keyframes flashBtn {
+            0% { background: #ff0033; }
+            100% { background: #ffff00; color: #000; }
+        }
+
+        .btn-crazy {
+            background: #00e1ff;
+            color: #000;
+        }
+
+        .btn-trap {
+            background: #8800ff;
             color: #fff;
-            animation: blinker 0.4s infinite alternate;
+            font-size: 1.8rem;
         }
 
-        @keyframes blinker {
-            from { opacity: 1; }
-            to { opacity: 0.3; }
+        /* Bouton insaisissable */
+        #runaway-btn {
+            position: relative;
+            background: #ff9900;
+            color: #000;
+            transition: 0.1s ease;
         }
 
-        /* Le bouton qui fuit la souris */
-        #btn-escape {
-            background: #fdcb6e;
-            color: #2d3436;
-            position: absolute;
-            transition: all 0.12s ease-out;
-            z-index: 10;
+        /* Fausse pub clignotante */
+        .fake-ad {
+            background: yellow;
+            border: 6px dashed red;
+            padding: 15px;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: red;
+            animation: blinkAd 0.3s infinite alternate;
+            cursor: pointer;
         }
 
-        /* Screamer / Overlay Chaotique */
-        #screamer-overlay {
+        @keyframes blinkAd {
+            0% { transform: scale(0.98); background: yellow; color: red; }
+            100% { transform: scale(1.02); background: red; color: yellow; }
+        }
+
+        /* Erreur Windows factice flottante */
+        .win-popup {
+            position: fixed;
+            width: 320px;
+            background: #ece9d8;
+            border: 3px solid #0055ea;
+            box-shadow: 8px 8px 25px rgba(0,0,0,0.7);
+            font-family: Tahoma, sans-serif;
+            z-index: 10000;
+            text-align: left;
+            display: none;
+        }
+
+        .win-title {
+            background: linear-gradient(90deg, #0055ea, #3f89ff);
+            color: white;
+            padding: 4px 8px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .win-body {
+            padding: 15px;
+            font-size: 0.95rem;
+            color: #000;
+        }
+
+        /* SCREAMER ABSOLU */
+        #screamer-zone {
             display: none;
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: red;
+            inset: 0;
+            background: #000;
             z-index: 9999999;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            animation: seizureFlash 0.05s infinite;
+            animation: earthquake 0.04s infinite;
         }
 
-        @keyframes seizureFlash {
-            0% { background: #ff0000; }
-            50% { background: #000000; }
-            100% { background: #ffffff; }
+        @keyframes earthquake {
+            0% { transform: translate(15px, -15px) scale(1.05); background: red; }
+            25% { transform: translate(-15px, 15px) scale(0.95); background: black; }
+            50% { transform: translate(15px, 15px) scale(1.08); background: white; }
+            75% { transform: translate(-15px, -15px) scale(0.96); background: red; }
+            100% { transform: translate(10px, 10px) scale(1.02); background: yellow; }
         }
 
-        .screamer-face {
-            font-size: 16rem;
-            animation: spinFace 0.2s infinite alternate;
-            filter: drop-shadow(0 0 50px yellow);
+        .screamer-monster {
+            font-size: 18rem;
+            user-select: none;
+            animation: monsterSpin 0.1s infinite alternate;
+            filter: drop-shadow(0 0 70px #ff0000) invert(1);
         }
 
-        @keyframes spinFace {
-            0% { transform: scale(1) rotate(-15deg); }
-            100% { transform: scale(1.6) rotate(15deg); }
+        @keyframes monsterSpin {
+            0% { transform: rotate(-25deg) scale(0.8); }
+            100% { transform: rotate(25deg) scale(1.4); }
         }
 
-        .screamer-title {
-            font-size: 4rem;
+        .screamer-text {
+            font-size: 5rem;
             font-weight: 900;
-            color: yellow;
+            color: #ffff00;
             background: #000;
             padding: 10px 30px;
-            border: 8px dashed white;
+            border: 10px dotted red;
+            text-transform: uppercase;
+        }
+
+        /* Traînée de la souris */
+        .mouse-emoji {
+            position: fixed;
+            pointer-events: none;
+            font-size: 1.8rem;
+            z-index: 99999;
+            animation: fadeOut 0.8s forwards;
+        }
+
+        @keyframes fadeOut {
+            0% { opacity: 1; transform: scale(1) translateY(0); }
+            100% { opacity: 0; transform: scale(2.5) translateY(-50px) rotate(180deg); }
         }
 
         footer {
-            background: yellow;
-            border-top: 5px solid black;
-            padding: 20px;
-            font-weight: bold;
-            font-size: 1.2rem;
-            margin-top: 40px;
+            background: #000;
+            color: #00ffea;
+            padding: 25px;
+            font-size: 1.3rem;
+            border-top: 10px solid #ff00ea;
+            margin-top: 50px;
         }
     </style>
 </head>
-<body>
+<body onclick="playRandomGoofySound(event)">
 
-    <!-- Overlay Screamer -->
-    <div id="screamer-overlay">
-        <div class="screamer-face">🤡</div>
-        <div class="screamer-title">CHEH !!! TROLLED PAR MATT !</div>
+    <!-- OVERLAY SCREAMER -->
+    <div id="screamer-zone">
+        <div class="screamer-monster">👹</div>
+        <div class="screamer-text">TU ES CUUIT MATT T'A EU !!!</div>
     </div>
 
-    <!-- Défilement ridicule en haut -->
-    <div class="marquee-container">
-        <marquee scrollamount="20" behavior="alternate">
-            ⚠️ ATTENTION : SITE OFFICIEL DE MATTCOUBETERGUES-DEL !!! HACKER PRO DE LA NASA !!! MEILLEUR CODEUR DU 83 ET DU MONDE ENTIER ⚠️
+    <!-- FAUSSE FENÊTRE D'ERREUR FLOTTANTE -->
+    <div id="fakeWin" class="win-popup" style="top: 30%; left: 35%;">
+        <div class="win-title">
+            <span>⚠️ ALERTE NIVEAU 9999</span>
+            <span style="cursor:pointer;" onclick="closePopup()">✖</span>
+        </div>
+        <div class="win-body">
+            <p><b>Attention !</b> 84 521 virus ont été injectés dans votre grille-pain !</p>
+            <div style="text-align: right; margin-top: 15px;">
+                <button onclick="triggerUltraScreamer()" style="padding: 5px 15px; cursor: pointer; font-weight: bold;">RÉPARER VITE</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- BANNIÈRE DÉFILANTE -->
+    <div class="marquee-top">
+        <marquee scrollamount="25" behavior="alternate">
+            🥖 BIENVENUE SUR LE QG ULTIME DE MATTCOUBETERGUES-DEL 🥖 INVENTEUR DU CLAVIER À 3 TOUCHES 🥖 CHAMPION DU MONDE DE LA DÉBILITÉ 🥖
         </marquee>
     </div>
 
-    <header>
-        <h1>⚡ MATTCOUBETERGUES-DEL ⚡</h1>
-        <p class="subtitle">💻 Webmestre Professionnel certifié Windows 95 💻</p>
-        <p style="margin-top: 15px; font-size: 1.2rem;">
-            Bienvenue sur ma page ultra moderne créée avec Notepad et 400 litres de sueur.
+    <!-- HEADER DE MALADE -->
+    <header class="header-box">
+        <h1><span class="spin-infinite">🌀</span> MATTCOUBETERGUES-DEL <span class="spin-infinite">🌀</span></h1>
+        <div class="subtitle">👑 DÉVELOPPEUR EN CHEF DES SITES LES PLUS CASSÉS DU MONDE 👑</div>
+        <p style="font-size: 1.4rem; font-weight: bold; margin-top: 15px;">
+            ⚠️ Tu es le 12 458 962ème pigeon à atterrir sur ce site magique.
         </p>
     </header>
 
-    <div class="content">
+    <div class="main-container">
 
-        <!-- Compteur de visites bidon -->
-        <div class="card-dumb">
-            <p>🔥 Tu es le <b>999 999 998ème</b> visiteur ! Clique pour gagner 1 milliard d'euros :</p>
-            <button class="crazy-btn btn-virus" onclick="alert('ERREUR CRITIQUE: Ton disque dur a été téléchargé dans le Cloud de la chocolaterie !'); triggerScreamer();">
-                💸 RÉCLAMER MON PACTOLE 💸
-            </button>
+        <!-- FAUSSE PUB PIÈGE -->
+        <div class="fake-ad" onclick="triggerUltraScreamer()">
+            🎁 CLIQUE ICI POUR GAGNER 548 POULETS GRATUITS ET UN TRACTEUR DORÉ !!! (100% NO FAKE) 🎁
         </div>
 
-        <!-- Section Panneau de Contrôle & Pièges -->
-        <div class="card-dumb">
-            <h2>🚨 ZONE DE DANGER EXTRÊME 🚨</h2>
-            <p>Ne touche surtout à rien, ça peut exploser.</p>
+        <!-- SECTION BOUTONS DÉGÉNÉRÉS -->
+        <div class="card-chaos">
+            <h2>🚨 LE PANNEAU DE CONTRÔLE DÉRAILLÉ 🚨</h2>
+            <p style="font-size: 1.2rem;">Ne clique sous aucun prétexte... ou alors à tes risques et périls.</p>
 
-            <div class="btn-panel">
-                <!-- Musique insupportable -->
-                <button class="crazy-btn btn-music" onclick="toggleAnnoyingMusic()">
-                    🔊 ACTIVER LA SUPER MUSIQUE DU SITE
+            <div class="btn-zone">
+                <button class="btn-dumb btn-alert" onclick="spawnPopup()">
+                    💣 FAIRE EXPLOSER L'ORDINATEUR
                 </button>
 
-                <!-- Bouton normal qui lance le screamer par trahison -->
-                <button class="crazy-btn" style="background: cyan;" onclick="triggerScreamer()">
-                    🐶 Photos de petits chiens mignons
+                <button class="btn-dumb btn-crazy" onclick="spinEverything()">
+                    🌪️ ACTIVER LE MODE MACHINE À LAVER
                 </button>
 
-                <!-- Bouton impossible à cliquer -->
-                <button id="btn-escape" class="crazy-btn" onmouseover="escapeMouse()" onclick="alert('Comment tu as fait ?! Tricheur !')">
-                    🖐️ Clique-moi si tu peux
+                <!-- Bouton qui s'enfuit -->
+                <button id="runaway-btn" class="btn-dumb" onmouseover="escapeButton()">
+                    🏃 ATTRAPE-MOI SI TU PEUX
+                </button>
+
+                <!-- Le Piège Screamer bien tentant -->
+                <button class="btn-dumb btn-trap" onclick="triggerUltraScreamer()">
+                    🛑 SURTOUT NE PAS TOUCHER ICI
                 </button>
             </div>
         </div>
 
-        <!-- Mes Super Compétences -->
-        <div class="card-dumb">
-            <h2 class="rainbow-text">MES SKILLS DE DINGO</h2>
-            <div class="skills-grid">
-                <div class="skill-item">
-                    <h3>⌨️ HTML 0.5</h3>
-                    <p>Je sais insérer des balises &lt;marquee&gt; et &lt;blink&gt; sans trembler.</p>
-                </div>
-                <div class="skill-item">
-                    <h3>🖱️ Clic Droit Rapide</h3>
-                    <p>Capacité à cliquer 70 fois par seconde sur "Actualiser".</p>
-                </div>
-                <div class="skill-item">
-                    <h3>💾 Expert Disquette</h3>
-                    <p>Stockage de pointe jusqu'à 1,44 Mo de pure puissance.</p>
-                </div>
-                <div class="skill-item">
-                    <h3>🧙‍♂️ Magie Noire CSS</h3>
-                    <p>Je mets tout en Comic Sans et fond rose fluo en 2 secondes chrono.</p>
-                </div>
-            </div>
+        <!-- CV ABSURDE -->
+        <div class="card-chaos" style="transform: rotate(1.5deg);">
+            <h2>📜 LES EXPLOITS DE MATTCOUBETERGUES-DEL</h2>
+            <ul style="list-style: '🍌 '; text-align: left; font-size: 1.4rem; line-height: 2;">
+                <li>A mangé une clé USB de 128 Go pour stocker ses souvenirs plus vite.</li>
+                <li>A battu l'intelligence artificielle au morpion en seulement 2 secondes.</li>
+                <li>A installé Windows 95 directement sur un paquet de chips.</li>
+                <li>Sait taper à 900 mots par minute avec seulement deux coudes.</li>
+            </ul>
         </div>
 
-        <!-- Section Témoignages -->
-        <div class="card-dumb">
-            <h2>💬 CE QU'ON DIT SUR MATT</h2>
-            <p><i>"Depuis qu'il a refait mon site, mes yeux brûlent mais j'adore."</i> - Bill Gates (probablement)</p>
-            <p><i>"10/10 sur l'échelle de la stupidité."</i> - Un anonyme traumatisé</p>
+        <!-- TÉMOIGNAGES FOIREUX -->
+        <div class="card-chaos" style="transform: rotate(-1.5deg); background: #ffff66;">
+            <h2>⭐ LES AVIS DU WEB</h2>
+            <p style="font-size: 1.3rem;"><i>"Depuis que j'ai visité ce site, mon écran fait cuire des œufs au plat."</i> — Un internaute heureux</p>
+            <p style="font-size: 1.3rem;"><i>"Le screamer m'a fait sursauter jusqu'au plafond."</i> — Le voisin de palier</p>
         </div>
 
     </div>
 
     <footer>
-        <p>Site garanti 0% sérieux - Réalisé par mattcoubetergues-del Corporation International LLC 🍌</p>
-        <p style="font-size: 0.9rem; margin-top: 5px;">Compatible uniquement avec Internet Explorer 3.0 et écran cathodique.</p>
+        <p>Site certifié 100% crétin par mattcoubetergues-del Corporation Int. 🤡</p>
+        <p style="font-size: 1rem; color: #ff0055;">Toute ressemblance avec un vrai portfolio serait une pure illusion d'optique.</p>
     </footer>
 
     <script>
-        // 1. Bouton qui s'enfuit quand on le survole
-        function escapeMouse() {
-            const btn = document.getElementById('btn-escape');
-            const x = Math.random() * (window.innerWidth - 220);
-            const y = Math.random() * 200;
-            btn.style.left = `${Math.max(10, x)}px`;
-            btn.style.top = `${y}px`;
+        // 1. Traînée d'émojis qui suit le curseur
+        const emojis = ['🤡', '🍌', '💩', '💥', '🍕', '🐸', '🚀', '🔥'];
+        document.addEventListener('mousemove', (e) => {
+            if (Math.random() > 0.6) {
+                const el = document.createElement('div');
+                el.className = 'mouse-emoji';
+                el.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+                el.style.left = e.clientX + 'px';
+                el.style.top = e.clientY + 'px';
+                document.body.appendChild(el);
+                setTimeout(() => el.remove(), 800);
+            }
+        });
+
+        // 2. Bouton qui prend la fuite
+        function escapeButton() {
+            const btn = document.getElementById('runaway-btn');
+            const newX = (Math.random() - 0.5) * 450;
+            const newY = (Math.random() - 0.5) * 250;
+            btn.style.transform = `translate(${newX}px, ${newY}px) rotate(${Math.random() * 40 - 20}deg)`;
         }
 
-        // 2. Screamer débile
-        let isTriggered = false;
-        function triggerScreamer() {
-            if (isTriggered) return;
-            isTriggered = true;
-
-            const overlay = document.getElementById('screamer-overlay');
-            overlay.style.display = 'flex';
-
-            playCrazySound();
-
-            setTimeout(() => {
-                overlay.style.display = 'none';
-                isTriggered = false;
-            }, 2500);
+        // 3. Mode Machine à laver (fait tourner la page)
+        let spinning = false;
+        function spinEverything() {
+            spinning = !spinning;
+            document.body.style.transition = 'transform 2s cubic-bezier(0.68, -0.55, 0.27, 1.55)';
+            document.body.style.transform = spinning ? 'rotate(180deg) scale(0.85)' : 'rotate(0deg) scale(1)';
         }
 
-        // 3. Bruit de screamer strident via Web Audio
-        function playCrazySound() {
+        // 4. Popup Windows factice
+        function spawnPopup() {
+            const popup = document.getElementById('fakeWin');
+            popup.style.display = 'block';
+            popup.style.top = Math.floor(Math.random() * 50 + 20) + '%';
+            popup.style.left = Math.floor(Math.random() * 50 + 20) + '%';
+            playTone(200, 0.4, 'sawtooth');
+        }
+
+        function closePopup() {
+            document.getElementById('fakeWin').style.display = 'none';
+        }
+
+        // 5. Sons absurdes synthétisés via Web Audio (sans aucun fichier externe)
+        function getAudioContext() {
+            return new (window.AudioContext || window.webkitAudioContext)();
+        }
+
+        function playTone(freq, duration, type = 'sine') {
             try {
-                const AudioCtx = window.AudioContext || window.webkitAudioContext;
-                const ctx = new AudioCtx();
-
+                const ctx = getAudioContext();
                 const osc = ctx.createOscillator();
                 const gain = ctx.createGain();
 
-                osc.type = 'sawtooth';
-                osc.frequency.setValueAtTime(1000, ctx.currentTime);
-                osc.frequency.linearRampToValueAtTime(80, ctx.currentTime + 2.0);
+                osc.type = type;
+                osc.frequency.setValueAtTime(freq, ctx.currentTime);
 
-                gain.gain.setValueAtTime(1.0, ctx.currentTime);
-                gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 2.0);
+                gain.gain.setValueAtTime(0.2, ctx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + duration);
 
                 osc.connect(gain);
                 gain.connect(ctx.destination);
 
                 osc.start();
-                osc.stop(ctx.currentTime + 2.0);
-            } catch (e) {}
+                osc.stop(ctx.currentTime + duration);
+            } catch(e) {}
         }
 
-        // 4. Bip-bip insupportable en boucle
-        let audioLoop = null;
-        let isMusicPlaying = false;
+        function playRandomGoofySound(e) {
+            // Ne pas déclencher si on clique sur un bouton ou le screamer
+            if (e.target.tagName === 'BUTTON' || e.target.closest('#screamer-zone')) return;
+            const randomFreq = Math.floor(Math.random() * 700 + 150);
+            playTone(randomFreq, 0.15, 'square');
+        }
 
-        function toggleAnnoyingMusic() {
-            if (isMusicPlaying) {
-                clearInterval(audioLoop);
-                isMusicPlaying = false;
-                alert("Musique arrêtée... ouf !");
-                return;
-            }
+        // 6. ULTRA SCREAMER : flashs violents + double oscillateur strident
+        let screamerActive = false;
+        function triggerUltraScreamer() {
+            if (screamerActive) return;
+            screamerActive = true;
 
-            isMusicPlaying = true;
-            const AudioCtx = window.AudioContext || window.webkitAudioContext;
-            const ctx = new AudioCtx();
+            const overlay = document.getElementById('screamer-zone');
+            overlay.style.display = 'flex';
 
-            const notes = [261.63, 293.66, 329.63, 349.23, 392.00, 523.25]; // Do Ré Mi Fa Sol Do
+            // Son de cri perçant / alarme stridente
+            try {
+                const ctx = getAudioContext();
+                const osc1 = ctx.createOscillator();
+                const osc2 = ctx.createOscillator();
+                const gain = ctx.createGain();
 
-            audioLoop = setInterval(() => {
-                try {
-                    const osc = ctx.createOscillator();
-                    const gain = ctx.createGain();
-                    osc.type = 'square';
-                    osc.frequency.value = notes[Math.floor(Math.random() * notes.length)];
+                osc1.type = 'sawtooth';
+                osc2.type = 'square';
 
-                    gain.gain.setValueAtTime(0.15, ctx.currentTime);
-                    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.15);
+                osc1.frequency.setValueAtTime(950, ctx.currentTime);
+                osc1.frequency.exponentialRampToValueAtTime(80, ctx.currentTime + 2.5);
 
-                    osc.connect(gain);
-                    gain.connect(ctx.destination);
+                osc2.frequency.setValueAtTime(1600, ctx.currentTime);
+                osc2.frequency.exponentialRampToValueAtTime(60, ctx.currentTime + 2.5);
 
-                    osc.start();
-                    osc.stop(ctx.currentTime + 0.15);
-                } catch(e) {}
-            }, 180);
+                gain.gain.setValueAtTime(1.0, ctx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 2.5);
 
-            alert("Attention aux oreilles, c'est parti !");
+                osc1.connect(gain);
+                osc2.connect(gain);
+                gain.connect(ctx.destination);
+
+                osc1.start();
+                osc2.start();
+                osc1.stop(ctx.currentTime + 2.5);
+                osc2.stop(ctx.currentTime + 2.5);
+            } catch(e) {}
+
+            setTimeout(() => {
+                overlay.style.display = 'none';
+                screamerActive = false;
+            }, 2500);
         }
     </script>
 </body>
