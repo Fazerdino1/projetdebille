@@ -3,270 +3,184 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mattcoubetergues-del | Portfolio & Profil</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&family=Creepster&display=swap" rel="stylesheet">
+    <title>BIENVENUE CHEZ MATTCOUBETERGUES-DEL LE BOSS DU NET</title>
     <style>
-        :root {
-            --bg-color: #0d1117;
-            --card-bg: rgba(22, 27, 34, 0.7);
-            --card-border: rgba(255, 255, 255, 0.08);
-            --primary: #58a6ff;
-            --accent: #bc8cff;
-            --text-main: #f0f6fc;
-            --text-muted: #8b949e;
-            --glow: rgba(88, 166, 255, 0.15);
-        }
-
         * {
-            margin: 0;
-            padding: 0;
             box-sizing: border-box;
-            font-family: 'Plus Jakarta Sans', sans-serif;
+            cursor: crosshair;
         }
 
         body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            background: repeating-radial-gradient(circle, #ff00ea, #ffe600 10%, #00ffff 20%, #00ff2f 30%, #ff0000 40%);
+            background-size: 80px 80px;
+            font-family: 'Comic Sans MS', 'Chalkboard SE', cursive, sans-serif;
+            color: #000;
+            text-align: center;
             overflow-x: hidden;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            animation: bgShift 2s linear infinite;
         }
 
-        .background-blob {
-            position: fixed;
-            width: 500px;
-            height: 500px;
-            background: radial-gradient(circle, var(--glow) 0%, rgba(0,0,0,0) 70%);
-            top: -100px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: -1;
-            pointer-events: none;
+        @keyframes bgShift {
+            0% { background-position: 0 0; }
+            100% { background-position: 80px 80px; }
+        }
+
+        /* Bannière clignotante */
+        .marquee-container {
+            background-color: #000;
+            color: #00ff00;
+            font-size: 1.8rem;
+            font-weight: 900;
+            padding: 10px 0;
+            border-bottom: 5px dashed yellow;
         }
 
         header {
-            width: 100%;
-            max-width: 1000px;
-            padding: 2.5rem 1.5rem;
+            padding: 2rem 1rem;
+            background: rgba(255, 255, 255, 0.85);
+            margin: 20px auto;
+            max-width: 900px;
+            border: 8px ridge #ff0055;
+            box-shadow: 12px 12px 0px #000;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: red;
+            text-shadow: 4px 4px 0px yellow, 8px 8px 0px blue;
+            animation: spinTitle 1.5s ease-in-out infinite alternate;
+        }
+
+        @keyframes spinTitle {
+            0% { transform: rotate(-3deg) scale(1); }
+            100% { transform: rotate(3deg) scale(1.08); }
+        }
+
+        .subtitle {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: purple;
+            background: #ffff00;
+            display: inline-block;
+            padding: 5px 15px;
+            border: 2px solid black;
+        }
+
+        /* Zone centrale débile */
+        .content {
+            max-width: 950px;
+            margin: auto;
+            padding: 20px;
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
+            gap: 25px;
             align-items: center;
         }
 
-        .logo {
-            font-size: 1.25rem;
-            font-weight: 800;
-            letter-spacing: -0.5px;
-            background: linear-gradient(90deg, var(--primary), var(--accent));
+        .card-dumb {
+            background: #fff;
+            border: 5px double #000;
+            padding: 20px;
+            width: 100%;
+            box-shadow: 10px 10px 0px rgba(0,0,0,0.5);
+            font-size: 1.2rem;
+        }
+
+        .card-dumb h2 {
+            font-size: 2rem;
+            text-decoration: underline wavy red;
+        }
+
+        .rainbow-text {
+            background: linear-gradient(to right, red, orange, yellow, green, cyan, blue, violet);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            user-select: none;
+            font-size: 2.2rem;
+            font-weight: bold;
+            animation: rainbowAnim 1s infinite alternate;
         }
 
-        nav a {
-            color: var(--text-muted);
-            text-decoration: none;
-            margin-left: 1.5rem;
-            font-size: 0.95rem;
-            transition: color 0.2s;
+        @keyframes rainbowAnim {
+            0% { filter: hue-rotate(0deg); }
+            100% { filter: hue-rotate(360deg); }
         }
 
-        nav a:hover {
-            color: var(--text-main);
-        }
-
-        .container {
-            width: 100%;
-            max-width: 900px;
-            padding: 2rem 1.5rem 5rem;
-            display: flex;
-            flex-direction: column;
-            gap: 4rem;
-        }
-
-        .hero {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            gap: 1.5rem;
-            margin-top: 1rem;
-        }
-
-        .avatar {
-            width: 110px;
-            height: 110px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: #fff;
-            box-shadow: 0 8px 30px rgba(88, 166, 255, 0.25);
-            border: 3px solid rgba(255, 255, 255, 0.1);
-            user-select: none;
-        }
-
-        .hero h1 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            line-height: 1.2;
-        }
-
-        .hero h1 span {
-            color: var(--primary);
-        }
-
-        .hero p {
-            color: var(--text-muted);
-            font-size: 1.1rem;
-            max-width: 550px;
-            line-height: 1.6;
-        }
-
-        .hero-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 1rem;
-            margin-top: 0.5rem;
-        }
-
-        .btn {
-            padding: 0.8rem 1.6rem;
-            border-radius: 9999px;
-            font-weight: 600;
-            text-decoration: none;
-            font-size: 0.95rem;
-            transition: all 0.2s ease;
-            cursor: pointer;
-            border: none;
-        }
-
-        .btn-primary {
-            background-color: var(--text-main);
-            color: #0d1117;
-        }
-
-        .btn-primary:hover {
-            opacity: 0.9;
-            transform: translateY(-2px);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            color: var(--text-main);
-            border: 1px solid var(--card-border);
-        }
-
-        .btn-outline:hover {
-            background-color: rgba(255, 255, 255, 0.05);
-            border-color: rgba(255, 255, 255, 0.2);
-            transform: translateY(-2px);
-        }
-
-        /* Bouton Piège Troll bien visible */
-        .btn-troll {
-            background: linear-gradient(135deg, #ff0055, #7928ca);
-            color: #ffffff;
-            box-shadow: 0 0 15px rgba(255, 0, 85, 0.4);
-            animation: pulseBtn 1.8s infinite;
-        }
-
-        .btn-troll:hover {
-            transform: scale(1.06);
-            box-shadow: 0 0 25px rgba(255, 0, 85, 0.7);
-        }
-
-        @keyframes pulseBtn {
-            0% { box-shadow: 0 0 10px rgba(255, 0, 85, 0.3); }
-            50% { box-shadow: 0 0 22px rgba(255, 0, 85, 0.65); }
-            100% { box-shadow: 0 0 10px rgba(255, 0, 85, 0.3); }
-        }
-
-        .section-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-        }
-
-        .section-title::before {
-            content: "";
-            display: inline-block;
-            width: 8px;
-            height: 20px;
-            background: var(--primary);
-            border-radius: 4px;
-        }
-
-        .grid {
+        /* Compétences absurdes */
+        .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
         }
 
-        .card {
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 16px;
-            padding: 1.5rem;
-            backdrop-filter: blur(8px);
-            transition: transform 0.2s ease, border-color 0.2s ease;
+        .skill-item {
+            background: #ffeaa7;
+            border: 3px dotted #d63031;
+            padding: 15px;
+            font-size: 1.1rem;
+            transform: rotate(-1deg);
+        }
+        .skill-item:nth-child(even) {
+            transform: rotate(2deg);
+            background: #81ecec;
         }
 
-        .card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(255, 255, 255, 0.2);
-        }
-
-        .card h3 {
-            font-size: 1.15rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-
-        .card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            line-height: 1.5;
-        }
-
-        .tags {
+        /* Boutons absurdes */
+        .btn-panel {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-
-        .tag {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-            color: var(--text-muted);
-            padding: 0.3rem 0.7rem;
-            border-radius: 6px;
-            font-size: 0.8rem;
-        }
-
-        footer {
-            margin-top: auto;
-            padding: 2rem 1.5rem;
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            border-top: 1px solid var(--card-border);
+            justify-content: center;
+            gap: 20px;
+            margin: 20px 0;
+            position: relative;
+            min-height: 120px;
             width: 100%;
-            text-align: center;
         }
 
-        /* Overlay Screamer Plein Écran */
+        .crazy-btn {
+            font-family: inherit;
+            font-size: 1.4rem;
+            font-weight: bold;
+            padding: 15px 30px;
+            border: 4px outset #fff;
+            cursor: pointer;
+            box-shadow: 5px 5px 0 #000;
+        }
+
+        .crazy-btn:active {
+            border: 4px inset #fff;
+            transform: translate(3px, 3px);
+            box-shadow: 2px 2px 0 #000;
+        }
+
+        .btn-music {
+            background: #00b894;
+            color: #fff;
+        }
+
+        .btn-virus {
+            background: #d63031;
+            color: #fff;
+            animation: blinker 0.4s infinite alternate;
+        }
+
+        @keyframes blinker {
+            from { opacity: 1; }
+            to { opacity: 0.3; }
+        }
+
+        /* Le bouton qui fuit la souris */
+        #btn-escape {
+            background: #fdcb6e;
+            color: #2d3436;
+            position: absolute;
+            transition: all 0.12s ease-out;
+            z-index: 10;
+        }
+
+        /* Screamer / Overlay Chaotique */
         #screamer-overlay {
             display: none;
             position: fixed;
@@ -274,189 +188,155 @@
             left: 0;
             width: 100vw;
             height: 100vh;
-            background-color: #000;
-            z-index: 999999;
+            background: red;
+            z-index: 9999999;
             flex-direction: column;
-            align-items: center;
             justify-content: center;
-            animation: flashShake 0.07s infinite;
+            align-items: center;
+            animation: seizureFlash 0.05s infinite;
+        }
+
+        @keyframes seizureFlash {
+            0% { background: #ff0000; }
+            50% { background: #000000; }
+            100% { background: #ffffff; }
         }
 
         .screamer-face {
-            font-size: 13rem;
-            filter: drop-shadow(0 0 45px #ff0000) invert(1);
-            user-select: none;
-            animation: zoomPulse 0.12s infinite alternate;
+            font-size: 16rem;
+            animation: spinFace 0.2s infinite alternate;
+            filter: drop-shadow(0 0 50px yellow);
         }
 
-        .screamer-text {
-            font-family: 'Creepster', cursive, sans-serif;
-            font-size: 5rem;
-            color: #ff0000;
-            text-shadow: 0 0 30px rgba(255, 0, 0, 0.95);
-            letter-spacing: 6px;
-            margin-top: 1rem;
-            text-transform: uppercase;
+        @keyframes spinFace {
+            0% { transform: scale(1) rotate(-15deg); }
+            100% { transform: scale(1.6) rotate(15deg); }
         }
 
-        @keyframes flashShake {
-            0% { transform: translate(7px, -5px) scale(1.03); background-color: #050000; }
-            25% { transform: translate(-7px, 6px) scale(0.97); background-color: #4a0000; }
-            50% { transform: translate(6px, 7px) scale(1.05); background-color: #000000; }
-            75% { transform: translate(-6px, -7px) scale(0.98); background-color: #6e0000; }
-            100% { transform: translate(5px, -4px) scale(1.02); background-color: #1a0000; }
+        .screamer-title {
+            font-size: 4rem;
+            font-weight: 900;
+            color: yellow;
+            background: #000;
+            padding: 10px 30px;
+            border: 8px dashed white;
         }
 
-        @keyframes zoomPulse {
-            0% { transform: scale(0.85); }
-            100% { transform: scale(1.25); }
-        }
-
-        @media (max-width: 600px) {
-            .hero h1 { font-size: 2rem; }
-            .hero-buttons { flex-direction: column; width: 100%; }
-            .btn { text-align: center; }
-            .screamer-face { font-size: 7.5rem; }
-            .screamer-text { font-size: 2.8rem; }
+        footer {
+            background: yellow;
+            border-top: 5px solid black;
+            padding: 20px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-top: 40px;
         }
     </style>
 </head>
 <body>
 
-    <div class="background-blob"></div>
-
     <!-- Overlay Screamer -->
     <div id="screamer-overlay">
-        <div class="screamer-face">👹</div>
-        <div class="screamer-text">BOOM ! T'ES PIÉGÉ !</div>
+        <div class="screamer-face">🤡</div>
+        <div class="screamer-title">CHEH !!! TROLLED PAR MATT !</div>
+    </div>
+
+    <!-- Défilement ridicule en haut -->
+    <div class="marquee-container">
+        <marquee scrollamount="20" behavior="alternate">
+            ⚠️ ATTENTION : SITE OFFICIEL DE MATTCOUBETERGUES-DEL !!! HACKER PRO DE LA NASA !!! MEILLEUR CODEUR DU 83 ET DU MONDE ENTIER ⚠️
+        </marquee>
     </div>
 
     <header>
-        <div class="logo">mattcoubetergues-del</div>
-        <nav>
-            <a href="#about">À propos</a>
-            <a href="#projets">Projets</a>
-            <a href="#contact">Contact</a>
-        </nav>
+        <h1>⚡ MATTCOUBETERGUES-DEL ⚡</h1>
+        <p class="subtitle">💻 Webmestre Professionnel certifié Windows 95 💻</p>
+        <p style="margin-top: 15px; font-size: 1.2rem;">
+            Bienvenue sur ma page ultra moderne créée avec Notepad et 400 litres de sueur.
+        </p>
     </header>
 
-    <main class="container">
-        <!-- Section Présentation -->
-        <section class="hero" id="about">
-            <div class="avatar">M</div>
-            <h1>Bienvenue chez <span>mattcoubetergues-del</span></h1>
-            <p>Espace personnel et portfolio. Développeur, créateur et passionné par les technologies du web et l'informatique.</p>
-            
-            <div class="hero-buttons">
-                <a href="#projets" class="btn btn-primary">Explorer mes projets</a>
-                <a href="#contact" class="btn btn-outline">Prendre contact</a>
-                <!-- Bouton Piège bien visible et tentant -->
-                <button class="btn btn-troll" onclick="triggerScreamer()">🎁 Récompense secrète</button>
-            </div>
-        </section>
+    <div class="content">
 
-        <!-- Section Compétences / Piliers -->
-        <section>
-            <h2 class="section-title">Domaines d'expertise</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>💻 Développement Web</h3>
-                    <p>Conception d'interfaces fluides, modernes et performantes adaptées à tous les écrans.</p>
-                    <div class="tags">
-                        <span class="tag">HTML5</span>
-                        <span class="tag">CSS3 / Flexbox</span>
-                        <span class="tag">JavaScript</span>
-                    </div>
-                </div>
-                <div class="card">
-                    <h3>⚙️ Projets & Logique</h3>
-                    <p>Création d'outils, gestion de scripts et automatisation pour optimiser le travail au quotidien.</p>
-                    <div class="tags">
-                        <span class="tag">Git</span>
-                        <span class="tag">APIs</span>
-                        <span class="tag">Automatisation</span>
-                    </div>
-                </div>
-                <div class="card">
-                    <h3>🎨 Design & Ergonomie</h3>
-                    <p>Priorité à l'expérience utilisateur, styles épurés et interfaces sombres agréables à l'œil.</p>
-                    <div class="tags">
-                        <span class="tag">UI/UX</span>
-                        <span class="tag">Responsive</span>
-                        <span class="tag">Minimalisme</span>
-                    </div>
-                </div>
-            </div>
-        </section>
+        <!-- Compteur de visites bidon -->
+        <div class="card-dumb">
+            <p>🔥 Tu es le <b>999 999 998ème</b> visiteur ! Clique pour gagner 1 milliard d'euros :</p>
+            <button class="crazy-btn btn-virus" onclick="alert('ERREUR CRITIQUE: Ton disque dur a été téléchargé dans le Cloud de la chocolaterie !'); triggerScreamer();">
+                💸 RÉCLAMER MON PACTOLE 💸
+            </button>
+        </div>
 
-        <!-- Section Projets -->
-        <section id="projets">
-            <h2 class="section-title">Projets récents</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>Espace Personnel</h3>
-                    <p>Page web légère hébergée sur GitHub Pages pour centraliser mes liens et réalisations.</p>
-                </div>
-                <div class="card">
-                    <h3>Applications & Scripts</h3>
-                    <p>Modules fonctionnels développés pour résoudre des besoins précis et automatisés.</p>
-                </div>
-            </div>
-        </section>
+        <!-- Section Panneau de Contrôle & Pièges -->
+        <div class="card-dumb">
+            <h2>🚨 ZONE DE DANGER EXTRÊME 🚨</h2>
+            <p>Ne touche surtout à rien, ça peut exploser.</p>
 
-        <!-- Section Contact -->
-        <section id="contact">
-            <h2 class="section-title">Contact</h2>
-            <div class="card" style="text-align: center; padding: 2.5rem 1.5rem;">
-                <h3>Prêt à échanger ?</h3>
-                <p style="margin: 0.8rem 0 1.5rem;">N'hésitez pas à me joindre directement pour collaborer sur un projet.</p>
-                <a href="mailto:contact@mattcoubetergues.del" class="btn btn-primary">Envoyer un e-mail</a>
+            <div class="btn-panel">
+                <!-- Musique insupportable -->
+                <button class="crazy-btn btn-music" onclick="toggleAnnoyingMusic()">
+                    🔊 ACTIVER LA SUPER MUSIQUE DU SITE
+                </button>
+
+                <!-- Bouton normal qui lance le screamer par trahison -->
+                <button class="crazy-btn" style="background: cyan;" onclick="triggerScreamer()">
+                    🐶 Photos de petits chiens mignons
+                </button>
+
+                <!-- Bouton impossible à cliquer -->
+                <button id="btn-escape" class="crazy-btn" onmouseover="escapeMouse()" onclick="alert('Comment tu as fait ?! Tricheur !')">
+                    🖐️ Clique-moi si tu peux
+                </button>
             </div>
-        </section>
-    </main>
+        </div>
+
+        <!-- Mes Super Compétences -->
+        <div class="card-dumb">
+            <h2 class="rainbow-text">MES SKILLS DE DINGO</h2>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <h3>⌨️ HTML 0.5</h3>
+                    <p>Je sais insérer des balises &lt;marquee&gt; et &lt;blink&gt; sans trembler.</p>
+                </div>
+                <div class="skill-item">
+                    <h3>🖱️ Clic Droit Rapide</h3>
+                    <p>Capacité à cliquer 70 fois par seconde sur "Actualiser".</p>
+                </div>
+                <div class="skill-item">
+                    <h3>💾 Expert Disquette</h3>
+                    <p>Stockage de pointe jusqu'à 1,44 Mo de pure puissance.</p>
+                </div>
+                <div class="skill-item">
+                    <h3>🧙‍♂️ Magie Noire CSS</h3>
+                    <p>Je mets tout en Comic Sans et fond rose fluo en 2 secondes chrono.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Témoignages -->
+        <div class="card-dumb">
+            <h2>💬 CE QU'ON DIT SUR MATT</h2>
+            <p><i>"Depuis qu'il a refait mon site, mes yeux brûlent mais j'adore."</i> - Bill Gates (probablement)</p>
+            <p><i>"10/10 sur l'échelle de la stupidité."</i> - Un anonyme traumatisé</p>
+        </div>
+
+    </div>
 
     <footer>
-        <p>© 2026 mattcoubetergues-del. Tous droits réservés.</p>
+        <p>Site garanti 0% sérieux - Réalisé par mattcoubetergues-del Corporation International LLC 🍌</p>
+        <p style="font-size: 0.9rem; margin-top: 5px;">Compatible uniquement avec Internet Explorer 3.0 et écran cathodique.</p>
     </footer>
 
     <script>
-        let isTriggered = false;
-
-        function playScreamSound() {
-            try {
-                const AudioCtx = window.AudioContext || window.webkitAudioContext;
-                const ctx = new AudioCtx();
-
-                const osc1 = ctx.createOscillator();
-                const osc2 = ctx.createOscillator();
-                const gain = ctx.createGain();
-
-                osc1.type = 'sawtooth';
-                osc2.type = 'square';
-
-                osc1.frequency.setValueAtTime(850, ctx.currentTime);
-                osc1.frequency.exponentialRampToValueAtTime(110, ctx.currentTime + 1.8);
-
-                osc2.frequency.setValueAtTime(1500, ctx.currentTime);
-                osc2.frequency.exponentialRampToValueAtTime(70, ctx.currentTime + 1.8);
-
-                gain.gain.setValueAtTime(1.0, ctx.currentTime);
-                gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 1.8);
-
-                osc1.connect(gain);
-                osc2.connect(gain);
-                gain.connect(ctx.destination);
-
-                osc1.start();
-                osc2.start();
-
-                osc1.stop(ctx.currentTime + 1.8);
-                osc2.stop(ctx.currentTime + 1.8);
-            } catch (e) {
-                console.error("Erreur Audio :", e);
-            }
+        // 1. Bouton qui s'enfuit quand on le survole
+        function escapeMouse() {
+            const btn = document.getElementById('btn-escape');
+            const x = Math.random() * (window.innerWidth - 220);
+            const y = Math.random() * 200;
+            btn.style.left = `${Math.max(10, x)}px`;
+            btn.style.top = `${y}px`;
         }
 
+        // 2. Screamer débile
+        let isTriggered = false;
         function triggerScreamer() {
             if (isTriggered) return;
             isTriggered = true;
@@ -464,12 +344,75 @@
             const overlay = document.getElementById('screamer-overlay');
             overlay.style.display = 'flex';
 
-            playScreamSound();
+            playCrazySound();
 
             setTimeout(() => {
                 overlay.style.display = 'none';
                 isTriggered = false;
-            }, 2000);
+            }, 2500);
+        }
+
+        // 3. Bruit de screamer strident via Web Audio
+        function playCrazySound() {
+            try {
+                const AudioCtx = window.AudioContext || window.webkitAudioContext;
+                const ctx = new AudioCtx();
+
+                const osc = ctx.createOscillator();
+                const gain = ctx.createGain();
+
+                osc.type = 'sawtooth';
+                osc.frequency.setValueAtTime(1000, ctx.currentTime);
+                osc.frequency.linearRampToValueAtTime(80, ctx.currentTime + 2.0);
+
+                gain.gain.setValueAtTime(1.0, ctx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 2.0);
+
+                osc.connect(gain);
+                gain.connect(ctx.destination);
+
+                osc.start();
+                osc.stop(ctx.currentTime + 2.0);
+            } catch (e) {}
+        }
+
+        // 4. Bip-bip insupportable en boucle
+        let audioLoop = null;
+        let isMusicPlaying = false;
+
+        function toggleAnnoyingMusic() {
+            if (isMusicPlaying) {
+                clearInterval(audioLoop);
+                isMusicPlaying = false;
+                alert("Musique arrêtée... ouf !");
+                return;
+            }
+
+            isMusicPlaying = true;
+            const AudioCtx = window.AudioContext || window.webkitAudioContext;
+            const ctx = new AudioCtx();
+
+            const notes = [261.63, 293.66, 329.63, 349.23, 392.00, 523.25]; // Do Ré Mi Fa Sol Do
+
+            audioLoop = setInterval(() => {
+                try {
+                    const osc = ctx.createOscillator();
+                    const gain = ctx.createGain();
+                    osc.type = 'square';
+                    osc.frequency.value = notes[Math.floor(Math.random() * notes.length)];
+
+                    gain.gain.setValueAtTime(0.15, ctx.currentTime);
+                    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.15);
+
+                    osc.connect(gain);
+                    gain.connect(ctx.destination);
+
+                    osc.start();
+                    osc.stop(ctx.currentTime + 0.15);
+                } catch(e) {}
+            }, 180);
+
+            alert("Attention aux oreilles, c'est parti !");
         }
     </script>
 </body>
