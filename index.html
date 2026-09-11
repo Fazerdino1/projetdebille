@@ -6,7 +6,7 @@
     <title>mattcoubetergues-del | Portfolio & Profil</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&family=Creepster&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-color: #0d1117;
@@ -36,7 +36,6 @@
             align-items: center;
         }
 
-        /* Effets d'arrière-plan lumineux */
         .background-blob {
             position: fixed;
             width: 500px;
@@ -65,6 +64,8 @@
             background: linear-gradient(90deg, var(--primary), var(--accent));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
+            cursor: pointer;
+            user-select: none;
         }
 
         nav a {
@@ -88,7 +89,6 @@
             gap: 4rem;
         }
 
-        /* Section Hero */
         .hero {
             display: flex;
             flex-direction: column;
@@ -111,6 +111,7 @@
             color: #fff;
             box-shadow: 0 8px 30px rgba(88, 166, 255, 0.25);
             border: 3px solid rgba(255, 255, 255, 0.1);
+            user-select: none;
         }
 
         .hero h1 {
@@ -128,6 +129,7 @@
             font-size: 1.1rem;
             max-width: 550px;
             line-height: 1.6;
+            position: relative;
         }
 
         .hero-buttons {
@@ -169,7 +171,6 @@
             transform: translateY(-2px);
         }
 
-        /* Cartes & Grille */
         .section-title {
             font-size: 1.5rem;
             font-weight: 700;
@@ -236,7 +237,6 @@
             font-size: 0.8rem;
         }
 
-        /* Footer */
         footer {
             margin-top: auto;
             padding: 2rem 1.5rem;
@@ -247,17 +247,73 @@
             text-align: center;
         }
 
+        /* Pièges invisibles / Screamer Triggers */
+        .secret-trigger {
+            cursor: pointer;
+            user-select: none;
+        }
+
+        .invisible-pixel {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            opacity: 0.02;
+            cursor: pointer;
+            vertical-align: middle;
+        }
+
+        /* Overlay Screamer */
+        #screamer-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: #000;
+            z-index: 999999;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            animation: flashShake 0.08s infinite;
+        }
+
+        .screamer-face {
+            font-size: 14rem;
+            filter: drop-shadow(0 0 40px red) invert(1);
+            user-select: none;
+            animation: zoomPulse 0.12s infinite alternate;
+        }
+
+        .screamer-text {
+            font-family: 'Creepster', cursive, sans-serif;
+            font-size: 5rem;
+            color: #ff0000;
+            text-shadow: 0 0 25px rgba(255, 0, 0, 0.9);
+            letter-spacing: 5px;
+            margin-top: 1rem;
+            text-transform: uppercase;
+        }
+
+        @keyframes flashShake {
+            0% { transform: translate(6px, -4px) scale(1.02); background-color: #050000; }
+            25% { transform: translate(-6px, 5px) scale(0.98); background-color: #3b0000; }
+            50% { transform: translate(5px, 6px) scale(1.04); background-color: #000000; }
+            75% { transform: translate(-5px, -6px) scale(0.99); background-color: #550000; }
+            100% { transform: translate(4px, -3px) scale(1.01); background-color: #1a0000; }
+        }
+
+        @keyframes zoomPulse {
+            0% { transform: scale(0.9); }
+            100% { transform: scale(1.2); }
+        }
+
         @media (max-width: 600px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            .hero-buttons {
-                flex-direction: column;
-                width: 100%;
-            }
-            .btn {
-                text-align: center;
-            }
+            .hero h1 { font-size: 2rem; }
+            .hero-buttons { flex-direction: column; width: 100%; }
+            .btn { text-align: center; }
+            .screamer-face { font-size: 8rem; }
+            .screamer-text { font-size: 3rem; }
         }
     </style>
 </head>
@@ -265,8 +321,15 @@
 
     <div class="background-blob"></div>
 
+    <!-- Overlay Screamer plein écran -->
+    <div id="screamer-overlay">
+        <div class="screamer-face">👹</div>
+        <div class="screamer-text">BOOM !</div>
+    </div>
+
     <header>
-        <div class="logo">mattcoubetergues-del</div>
+        <!-- Piège 1 : Clic sur le logo -->
+        <div class="logo secret-trigger" onclick="triggerScreamer()" title="mattcoubetergues-del">mattcoubetergues-del</div>
         <nav>
             <a href="#about">À propos</a>
             <a href="#projets">Projets</a>
@@ -279,7 +342,11 @@
         <section class="hero" id="about">
             <div class="avatar">M</div>
             <h1>Bienvenue chez <span>mattcoubetergues-del</span></h1>
-            <p>Espace personnel et portfolio. Développeur, créateur et passionné par les technologies du web et l'informatique.</p>
+            <p>
+                Espace personnel et portfolio. Développeur, créateur et passionné par les technologies du web et l'informatique.
+                <!-- Piège 2 : Pixel invisible caché dans le texte -->
+                <span class="invisible-pixel" onclick="triggerScreamer()">.</span>
+            </p>
             <div class="hero-buttons">
                 <a href="#projets" class="btn btn-primary">Explorer mes projets</a>
                 <a href="#contact" class="btn btn-outline">Prendre contact</a>
@@ -347,8 +414,66 @@
     </main>
 
     <footer>
-        <p>© 2026 mattcoubetergues-del. Tous droits réservés.</p>
+        <!-- Piège 3 : Le point final du copyright -->
+        <p>© 2026 mattcoubetergues-del. Tous droits réservés<span class="secret-trigger" onclick="triggerScreamer()">.</span></p>
     </footer>
 
+    <script>
+        let isTriggered = false;
+
+        function playScreamSound() {
+            try {
+                const AudioCtx = window.AudioContext || window.webkitAudioContext;
+                const ctx = new AudioCtx();
+
+                // Synthèse d'un cri strident / bruit saturé sans fichier externe
+                const osc1 = ctx.createOscillator();
+                const osc2 = ctx.createOscillator();
+                const gain = ctx.createGain();
+
+                osc1.type = 'sawtooth';
+                osc2.type = 'square';
+
+                // Fréquences stridentes en glissando
+                osc1.frequency.setValueAtTime(800, ctx.currentTime);
+                osc1.frequency.exponentialRampToValueAtTime(120, ctx.currentTime + 1.8);
+
+                osc2.frequency.setValueAtTime(1400, ctx.currentTime);
+                osc2.frequency.exponentialRampToValueAtTime(80, ctx.currentTime + 1.8);
+
+                // Volume maximal avec coupure à la fin
+                gain.gain.setValueAtTime(1.0, ctx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 1.8);
+
+                osc1.connect(gain);
+                osc2.connect(gain);
+                gain.connect(ctx.destination);
+
+                osc1.start();
+                osc2.start();
+
+                osc1.stop(ctx.currentTime + 1.8);
+                osc2.stop(ctx.currentTime + 1.8);
+            } catch (e) {
+                console.error("Audio Web API non disponible ou bloqué :", e);
+            }
+        }
+
+        function triggerScreamer() {
+            if (isTriggered) return;
+            isTriggered = true;
+
+            const overlay = document.getElementById('screamer-overlay');
+            overlay.style.display = 'flex';
+
+            playScreamSound();
+
+            // Fermeture automatique après 2 secondes
+            setTimeout(() => {
+                overlay.style.display = 'none';
+                isTriggered = false;
+            }, 2000);
+        }
+    </script>
 </body>
 </html>
