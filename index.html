@@ -3,493 +3,564 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🚨 SITE OFFICIEL DU ROI MATTCOUBETERGUES-DEL 🚨</title>
+    <title>☠️ ENFER NUMÉRIQUE DE MATTCOUBETERGUES-DEL ☠️</title>
     <style>
         * {
             box-sizing: border-box;
-            cursor: grab;
+            cursor: crosshair;
         }
 
         body {
             margin: 0;
             padding: 0;
-            font-family: "Comic Sans MS", "Chalkboard SE", fantasy, sans-serif;
-            background: repeating-linear-gradient(45deg, #ff0000, #ff0000 30px, #ffff00 30px, #ffff00 60px, #00ff00 60px, #00ff00 90px, #00ffff 90px, #00ffff 120px, #ff00ff 120px, #ff00ff 150px);
-            background-size: 300px 300px;
-            animation: bgSlide 1.5s linear infinite;
-            overflow-x: hidden;
+            font-family: 'Comic Sans MS', 'Impact', fantasy, sans-serif;
+            background: repeating-radial-gradient(circle, #ff0000 0, #000 15px, #ffff00 30px, #00ff00 45px, #ff00ea 60px);
+            background-size: 120px 120px;
+            animation: seizureBg 0.3s linear infinite;
+            color: #fff;
             text-align: center;
+            overflow-x: hidden;
         }
 
-        @keyframes bgSlide {
-            0% { background-position: 0 0; }
-            100% { background-position: 300px 300px; }
+        @keyframes seizureBg {
+            0% { background-position: 0 0; filter: hue-rotate(0deg); }
+            50% { filter: hue-rotate(180deg) invert(0.2); }
+            100% { background-position: 120px 120px; filter: hue-rotate(360deg); }
         }
 
-        /* Barre d'alerte en folie */
-        .marquee-top {
+        /* Bandes d'alertes défilantes */
+        .marquee-hell {
             background: #000;
-            color: #ff0055;
-            font-size: 2rem;
+            color: #ff0000;
+            font-size: 2.2rem;
             font-weight: 900;
-            padding: 12px;
-            border-bottom: 8px dashed #00ff00;
-            text-shadow: 0 0 10px #ff0000;
+            padding: 8px;
+            border-top: 6px dashed #ffff00;
+            border-bottom: 6px dashed #ffff00;
+            text-shadow: 0 0 15px #ff0000, 0 0 30px #ffff00;
         }
 
-        /* Gros titres chaotiques */
-        .header-box {
-            background: rgba(255, 255, 255, 0.9);
-            border: 12px groove #ff00ea;
+        /* Header hideux et tremblant */
+        header {
+            background: rgba(0, 0, 0, 0.9);
+            border: 12px double #ff0000;
             max-width: 900px;
-            margin: 30px auto;
-            padding: 25px;
-            box-shadow: 20px 20px 0px #000;
-            transform: rotate(-2deg);
-            animation: wobble 0.6s infinite alternate;
+            margin: 25px auto;
+            padding: 20px;
+            box-shadow: 0 0 50px #ff0000, inset 0 0 40px #ffff00;
+            animation: shakeHard 0.08s infinite alternate;
         }
 
-        @keyframes wobble {
-            0% { transform: rotate(-2deg) scale(0.99); }
-            100% { transform: rotate(2deg) scale(1.02); }
+        @keyframes shakeHard {
+            0% { transform: translate(-3px, 3px) rotate(-1deg); }
+            100% { transform: translate(3px, -3px) rotate(1deg); }
         }
 
         h1 {
-            font-size: 3.5rem;
-            color: #0026ff;
-            text-shadow: 5px 5px 0px #ffea00, 10px 10px 0px #ff0000;
-            letter-spacing: -2px;
+            font-size: 3.6rem;
+            color: #ffff00;
+            text-shadow: 5px 5px 0 #ff0000, -5px -5px 0 #00ffff, 0 0 25px #fff;
+            letter-spacing: 3px;
             margin: 0;
         }
 
-        .spin-infinite {
+        .toxic-tag {
+            font-size: 1.6rem;
+            background: #ff0000;
+            color: #ffff00;
             display: inline-block;
-            animation: spinAll 1s linear infinite;
+            padding: 5px 20px;
+            margin-top: 10px;
+            border: 4px solid #fff;
+            animation: pulseText 0.2s infinite alternate;
         }
 
-        @keyframes spinAll {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
+        @keyframes pulseText {
+            from { transform: scale(0.95); background: #ff0000; }
+            to { transform: scale(1.05); background: #000; color: #ff0000; }
         }
 
-        .subtitle {
-            font-size: 1.5rem;
-            background: #00ff66;
-            color: #000;
-            display: inline-block;
-            padding: 8px 15px;
-            margin-top: 15px;
-            border: 4px solid #000;
-            transform: rotate(3deg);
-        }
-
-        /* Grille de bêtises */
-        .main-container {
+        /* Container principal */
+        .nightmare-grid {
             max-width: 950px;
             margin: auto;
+            padding: 20px;
             display: flex;
             flex-direction: column;
             gap: 30px;
-            padding: 20px;
         }
 
-        .card-chaos {
-            background: #ffffffe6;
-            border: 8px ridge #0011ff;
+        .cursed-card {
+            background: rgba(20, 0, 0, 0.92);
+            border: 8px ridge #00ff00;
             padding: 20px;
-            box-shadow: 15px 15px 0px rgba(0,0,0,0.8);
+            box-shadow: 12px 12px 0px #ff00ea;
             position: relative;
         }
 
-        .card-chaos h2 {
+        .cursed-card h2 {
             font-size: 2.2rem;
-            color: #d600aa;
-            text-shadow: 3px 3px 0 #ffe600;
+            color: #00ffea;
+            text-shadow: 3px 3px 0 #ff0055;
         }
 
-        /* Boutons déjantés */
+        /* Boutons cauchemardesques */
         .btn-zone {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 20px;
+            gap: 15px;
             margin-top: 20px;
         }
 
-        .btn-dumb {
+        .btn-horror {
             font-family: inherit;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: 900;
-            padding: 15px 25px;
+            padding: 16px 26px;
             border: 6px outset #fff;
-            box-shadow: 8px 8px 0px #000;
             cursor: pointer;
-            transition: 0.1s;
+            box-shadow: 8px 8px 0px #000;
+            transition: transform 0.05s;
         }
 
-        .btn-dumb:active {
-            border: 6px inset #fff;
-            transform: translate(5px, 5px);
-            box-shadow: 2px 2px 0px #000;
+        .btn-horror:active {
+            border-style: inset;
+            transform: translate(4px, 4px);
         }
 
-        .btn-alert {
-            background: #ff0033;
-            color: #fff;
-            animation: flashBtn 0.2s infinite alternate;
-        }
+        .btn-bsod { background: #0078d7; color: #fff; }
+        .btn-siren { background: #ff5500; color: #000; }
+        .btn-invert { background: #00ff66; color: #000; }
+        .btn-popup-spawn { background: #e02424; color: #fff; animation: glowRed 0.3s infinite alternate; }
 
-        @keyframes flashBtn {
-            0% { background: #ff0033; }
-            100% { background: #ffff00; color: #000; }
-        }
-
-        .btn-crazy {
-            background: #00e1ff;
-            color: #000;
-        }
-
-        .btn-trap {
-            background: #8800ff;
-            color: #fff;
-            font-size: 1.8rem;
+        @keyframes glowRed {
+            from { box-shadow: 0 0 10px #ff0000; }
+            to { box-shadow: 0 0 35px #ffff00; }
         }
 
         /* Bouton insaisissable */
-        #runaway-btn {
+        #troll-target {
             position: relative;
-            background: #ff9900;
-            color: #000;
-            transition: 0.1s ease;
+            background: #ff00ea;
+            color: #fff;
         }
 
-        /* Fausse pub clignotante */
-        .fake-ad {
-            background: yellow;
-            border: 6px dashed red;
-            padding: 15px;
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: red;
-            animation: blinkAd 0.3s infinite alternate;
-            cursor: pointer;
-        }
-
-        @keyframes blinkAd {
-            0% { transform: scale(0.98); background: yellow; color: red; }
-            100% { transform: scale(1.02); background: red; color: yellow; }
-        }
-
-        /* Erreur Windows factice flottante */
-        .win-popup {
+        /* Popups de Windows infernales */
+        .fake-error {
             position: fixed;
             width: 320px;
             background: #ece9d8;
             border: 3px solid #0055ea;
-            box-shadow: 8px 8px 25px rgba(0,0,0,0.7);
-            font-family: Tahoma, sans-serif;
-            z-index: 10000;
+            box-shadow: 10px 10px 30px rgba(0,0,0,0.9);
+            font-family: 'Tahoma', sans-serif;
             text-align: left;
-            display: none;
-        }
-
-        .win-title {
-            background: linear-gradient(90deg, #0055ea, #3f89ff);
-            color: white;
-            padding: 4px 8px;
-            font-weight: bold;
-            font-size: 0.9rem;
-            display: flex;
-            justify-content: space-between;
-        }
-
-        .win-body {
-            padding: 15px;
-            font-size: 0.95rem;
+            z-index: 99999;
             color: #000;
         }
 
-        /* SCREAMER ABSOLU */
-        #screamer-zone {
+        .fake-error-header {
+            background: linear-gradient(90deg, #0055ea, #3f89ff);
+            color: #fff;
+            font-weight: bold;
+            padding: 4px 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9rem;
+        }
+
+        .fake-error-body {
+            padding: 15px;
+            font-size: 0.95rem;
+        }
+
+        /* Faux écran bleu BSOD */
+        #bsod-screen {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: #0078d7;
+            z-index: 9999999;
+            color: white;
+            font-family: 'Segoe UI', sans-serif;
+            text-align: left;
+            padding: 10vw;
+            box-sizing: border-box;
+        }
+
+        /* TRAÎNÉE D'YEUX ET DE CRÂNES */
+        .cursed-trail {
+            position: fixed;
+            pointer-events: none;
+            font-size: 2.2rem;
+            z-index: 999999;
+            animation: trailFade 0.6s forwards;
+        }
+
+        @keyframes trailFade {
+            0% { opacity: 1; transform: scale(1) rotate(0deg); }
+            100% { opacity: 0; transform: scale(3) rotate(360deg); filter: blur(4px); }
+        }
+
+        /* SCREAMER INTERSTELLAIRE */
+        #screamer-hell {
             display: none;
             position: fixed;
             inset: 0;
             background: #000;
-            z-index: 9999999;
+            z-index: 99999999;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            animation: earthquake 0.04s infinite;
+            animation: violentFlicker 0.03s infinite;
         }
 
-        @keyframes earthquake {
-            0% { transform: translate(15px, -15px) scale(1.05); background: red; }
-            25% { transform: translate(-15px, 15px) scale(0.95); background: black; }
-            50% { transform: translate(15px, 15px) scale(1.08); background: white; }
-            75% { transform: translate(-15px, -15px) scale(0.96); background: red; }
-            100% { transform: translate(10px, 10px) scale(1.02); background: yellow; }
+        @keyframes violentFlicker {
+            0% { background: #ff0000; transform: scale(1.08) rotate(2deg); }
+            25% { background: #000; transform: scale(0.95) rotate(-2deg); }
+            50% { background: #ffff00; transform: scale(1.12) rotate(1deg); }
+            75% { background: #fff; transform: scale(0.92) rotate(-1deg); }
+            100% { background: #ff00aa; transform: scale(1.05) rotate(0deg); }
         }
 
-        .screamer-monster {
-            font-size: 18rem;
+        .demon-face {
+            font-size: 22rem;
+            filter: drop-shadow(0 0 100px red) contrast(200%);
+            animation: faceSpasm 0.06s infinite alternate;
             user-select: none;
-            animation: monsterSpin 0.1s infinite alternate;
-            filter: drop-shadow(0 0 70px #ff0000) invert(1);
         }
 
-        @keyframes monsterSpin {
-            0% { transform: rotate(-25deg) scale(0.8); }
-            100% { transform: rotate(25deg) scale(1.4); }
+        @keyframes faceSpasm {
+            0% { transform: scale(0.8) rotate(-20deg); filter: invert(0); }
+            100% { transform: scale(1.7) rotate(20deg); filter: invert(1); }
         }
 
-        .screamer-text {
+        .screamer-title-box {
             font-size: 5rem;
             font-weight: 900;
             color: #ffff00;
             background: #000;
-            padding: 10px 30px;
-            border: 10px dotted red;
+            border: 15px double red;
+            padding: 10px 40px;
+            letter-spacing: 6px;
             text-transform: uppercase;
-        }
-
-        /* Traînée de la souris */
-        .mouse-emoji {
-            position: fixed;
-            pointer-events: none;
-            font-size: 1.8rem;
-            z-index: 99999;
-            animation: fadeOut 0.8s forwards;
-        }
-
-        @keyframes fadeOut {
-            0% { opacity: 1; transform: scale(1) translateY(0); }
-            100% { opacity: 0; transform: scale(2.5) translateY(-50px) rotate(180deg); }
         }
 
         footer {
             background: #000;
-            color: #00ffea;
-            padding: 25px;
-            font-size: 1.3rem;
-            border-top: 10px solid #ff00ea;
-            margin-top: 50px;
+            color: #ff0000;
+            padding: 30px;
+            font-size: 1.4rem;
+            border-top: 10px double #ffff00;
+            margin-top: 60px;
         }
     </style>
 </head>
-<body onclick="playRandomGoofySound(event)">
+<body onclick="playRandomCursedGlitch(event)">
 
-    <!-- OVERLAY SCREAMER -->
-    <div id="screamer-zone">
-        <div class="screamer-monster">👹</div>
-        <div class="screamer-text">TU ES CUUIT MATT T'A EU !!!</div>
+    <!-- OVERLAY SCREAMER MAXIMAL -->
+    <div id="screamer-hell">
+        <div class="demon-face">💀</div>
+        <div class="screamer-title-box">ÂME SUPPRIMÉE PAR MATT !!!</div>
     </div>
 
-    <!-- FAUSSE FENÊTRE D'ERREUR FLOTTANTE -->
-    <div id="fakeWin" class="win-popup" style="top: 30%; left: 35%;">
-        <div class="win-title">
-            <span>⚠️ ALERTE NIVEAU 9999</span>
-            <span style="cursor:pointer;" onclick="closePopup()">✖</span>
-        </div>
-        <div class="win-body">
-            <p><b>Attention !</b> 84 521 virus ont été injectés dans votre grille-pain !</p>
-            <div style="text-align: right; margin-top: 15px;">
-                <button onclick="triggerUltraScreamer()" style="padding: 5px 15px; cursor: pointer; font-weight: bold;">RÉPARER VITE</button>
-            </div>
+    <!-- FAUX ÉCRAN BLEU DE LA MORT -->
+    <div id="bsod-screen" onclick="hideBsod()">
+        <div style="font-size: 8rem; margin-bottom: 20px;">:(</div>
+        <div style="font-size: 2rem; margin-bottom: 25px;">Votre appareil a rencontré un problème et doit redémarrer. Nous collectons simplement quelques informations relatives aux erreurs de mattcoubetergues-del.</div>
+        <div style="font-size: 1.2rem; line-height: 1.8;">
+            Code d'arrêt : CRITICAL_PROCESS_DIED_FROM_LAUGHTER<br>
+            Éléments ayant échoué : cerveau_de_matt.sys<br><br>
+            <i>(Cliquez n'importe où pour ressusciter votre PC)</i>
         </div>
     </div>
 
-    <!-- BANNIÈRE DÉFILANTE -->
-    <div class="marquee-top">
-        <marquee scrollamount="25" behavior="alternate">
-            🥖 BIENVENUE SUR LE QG ULTIME DE MATTCOUBETERGUES-DEL 🥖 INVENTEUR DU CLAVIER À 3 TOUCHES 🥖 CHAMPION DU MONDE DE LA DÉBILITÉ 🥖
+    <!-- BANNIÈRE DE L'ANGOISSE -->
+    <div class="marquee-hell">
+        <marquee scrollamount="32" behavior="alternate">
+            ⚠️ EVACUATION IMMEDIATE ⚠️ SITE MAUDIT PAR MATTCOUBETERGUES-DEL ⚠️ VOS ENCEINTES VONT BRÛLER ⚠️ 0% DE SURVIE GARANTIE ⚠️
         </marquee>
     </div>
 
-    <!-- HEADER DE MALADE -->
-    <header class="header-box">
-        <h1><span class="spin-infinite">🌀</span> MATTCOUBETERGUES-DEL <span class="spin-infinite">🌀</span></h1>
-        <div class="subtitle">👑 DÉVELOPPEUR EN CHEF DES SITES LES PLUS CASSÉS DU MONDE 👑</div>
-        <p style="font-size: 1.4rem; font-weight: bold; margin-top: 15px;">
-            ⚠️ Tu es le 12 458 962ème pigeon à atterrir sur ce site magique.
+    <!-- HEADER HORRIFIQUE -->
+    <header>
+        <h1>☣️ MATTCOUBETERGUES-DEL ☣️</h1>
+        <div class="toxic-tag">🔥 NÉCRO-DÉVELOPPEUR & TERRORISTE DU DESIGN WEB 🔥</div>
+        <p style="font-size: 1.5rem; margin-top: 15px; color: #00ffea; font-weight: bold;">
+            ATTENTION : En restant plus de 3 secondes sur cette page, vous acceptez de céder votre frigo.
         </p>
     </header>
 
-    <div class="main-container">
+    <div class="nightmare-grid">
 
-        <!-- FAUSSE PUB PIÈGE -->
-        <div class="fake-ad" onclick="triggerUltraScreamer()">
-            🎁 CLIQUE ICI POUR GAGNER 548 POULETS GRATUITS ET UN TRACTEUR DORÉ !!! (100% NO FAKE) 🎁
+        <!-- FAUSSE ALERTE VIRUS CLIGNOTANTE (DÉCLENCHEUR SCREAMER) -->
+        <div class="cursed-card" style="border-color: red; cursor: pointer;" onclick="triggerHyperScreamer()">
+            <h2 style="color: yellow; animation: pulseText 0.15s infinite alternate;">⚠️ ALERTE : 8 492 TROYENS DÉTECTÉS DANS VOS CHAUSETTES ⚠️</h2>
+            <p style="font-size: 1.5rem; font-weight: 900;">[ CLIQUEZ ICI IMMÉDIATEMENT POUR DÉSINFECTER AVEC DU JUS D'ANANAS ]</p>
         </div>
 
-        <!-- SECTION BOUTONS DÉGÉNÉRÉS -->
-        <div class="card-chaos">
-            <h2>🚨 LE PANNEAU DE CONTRÔLE DÉRAILLÉ 🚨</h2>
-            <p style="font-size: 1.2rem;">Ne clique sous aucun prétexte... ou alors à tes risques et périls.</p>
+        <!-- ZONE DES COMMANDES DÉTRUITES -->
+        <div class="cursed-card">
+            <h2>💣 CONSOLE DE DESTRUCTION MASSIVE</h2>
+            <p style="font-size: 1.3rem;">Ces boutons ont été testés sur des cobayes en laboratoire :</p>
 
             <div class="btn-zone">
-                <button class="btn-dumb btn-alert" onclick="spawnPopup()">
-                    💣 FAIRE EXPLOSER L'ORDINATEUR
+                <button class="btn-horror btn-bsod" onclick="triggerBsod()">
+                    💻 PLANTER WINDOWS 11
                 </button>
 
-                <button class="btn-dumb btn-crazy" onclick="spinEverything()">
-                    🌪️ ACTIVER LE MODE MACHINE À LAVER
+                <button class="btn-horror btn-siren" onclick="toggleNuclearSiren()">
+                    🚨 SIRÈNE NUCLÉAIRE ASSOURDISSANTE
                 </button>
 
-                <!-- Bouton qui s'enfuit -->
-                <button id="runaway-btn" class="btn-dumb" onmouseover="escapeButton()">
-                    🏃 ATTRAPE-MOI SI TU PEUX
+                <button class="btn-horror btn-popup-spawn" onclick="spawnHydraPopup()">
+                    🦠 LIBÉRER L'HYDRE DES POPUPS
                 </button>
 
-                <!-- Le Piège Screamer bien tentant -->
-                <button class="btn-dumb btn-trap" onclick="triggerUltraScreamer()">
-                    🛑 SURTOUT NE PAS TOUCHER ICI
+                <button class="btn-horror btn-invert" onclick="toggleCursedFilter()">
+                    👁️ MODE VISION DÉMONIAQUE
+                </button>
+
+                <!-- Bouton qui fuit et se téléporte -->
+                <button id="troll-target" class="btn-horror" onmouseover="teleportButton()">
+                    🎯 CLIQUE POUR GAGNER 1 000 000 €
                 </button>
             </div>
         </div>
 
-        <!-- CV ABSURDE -->
-        <div class="card-chaos" style="transform: rotate(1.5deg);">
-            <h2>📜 LES EXPLOITS DE MATTCOUBETERGUES-DEL</h2>
-            <ul style="list-style: '🍌 '; text-align: left; font-size: 1.4rem; line-height: 2;">
-                <li>A mangé une clé USB de 128 Go pour stocker ses souvenirs plus vite.</li>
-                <li>A battu l'intelligence artificielle au morpion en seulement 2 secondes.</li>
-                <li>A installé Windows 95 directement sur un paquet de chips.</li>
-                <li>Sait taper à 900 mots par minute avec seulement deux coudes.</li>
+        <!-- CV HORRIBLE -->
+        <div class="cursed-card" style="transform: rotate(2deg);">
+            <h2>📜 LES FAITS D'ARMES SINISTRES DE MATT</h2>
+            <ul style="list-style: '💀 '; text-align: left; font-size: 1.4rem; line-height: 2.2; color: #ffeb3b;">
+                <li>A codé ce site dans le noir avec un clavier sans touches.</li>
+                <li>A fait exploser la box internet de son voisin par simple télépathie.</li>
+                <li>Capable de coder en binaire avec les yeux bandés et un marteau.</li>
+                <li>Recherché par Interpol pour utilisation abusive de Comic Sans MS.</li>
             </ul>
         </div>
 
-        <!-- TÉMOIGNAGES FOIREUX -->
-        <div class="card-chaos" style="transform: rotate(-1.5deg); background: #ffff66;">
-            <h2>⭐ LES AVIS DU WEB</h2>
-            <p style="font-size: 1.3rem;"><i>"Depuis que j'ai visité ce site, mon écran fait cuire des œufs au plat."</i> — Un internaute heureux</p>
-            <p style="font-size: 1.3rem;"><i>"Le screamer m'a fait sursauter jusqu'au plafond."</i> — Le voisin de palier</p>
+        <!-- QUESTIONNAIRE MAUDIT -->
+        <div class="cursed-card" style="background: #330000;">
+            <h2 style="color: #ff0000;">🩸 PACTE DU DIABLE</h2>
+            <p style="font-size: 1.3rem;">Voulez-vous vendre votre connexion Wi-Fi à mattcoubetergues-del ?</p>
+            <div class="btn-zone">
+                <button class="btn-horror" style="background: #00ff00; color: #000;" onclick="alert('Trop tard ! Votre box appartient désormais à Matt.');">OUI AVEC JOIE</button>
+                <button class="btn-horror" style="background: #ff0000; color: #fff;" onclick="triggerHyperScreamer()">NON JAMAIS</button>
+            </div>
         </div>
 
     </div>
 
     <footer>
-        <p>Site certifié 100% crétin par mattcoubetergues-del Corporation Int. 🤡</p>
-        <p style="font-size: 1rem; color: #ff0055;">Toute ressemblance avec un vrai portfolio serait une pure illusion d'optique.</p>
+        <p>☠️ mattcoubetergues-del - AUCUN DROIT RÉSERVÉ - TOUT EST CASSÉ ☠️</p>
     </footer>
 
     <script>
-        // 1. Traînée d'émojis qui suit le curseur
-        const emojis = ['🤡', '🍌', '💩', '💥', '🍕', '🐸', '🚀', '🔥'];
-        document.addEventListener('mousemove', (e) => {
-            if (Math.random() > 0.6) {
-                const el = document.createElement('div');
-                el.className = 'mouse-emoji';
-                el.innerText = emojis[Math.floor(Math.random() * emojis.length)];
-                el.style.left = e.clientX + 'px';
-                el.style.top = e.clientY + 'px';
-                document.body.appendChild(el);
-                setTimeout(() => el.remove(), 800);
-            }
-        });
-
-        // 2. Bouton qui prend la fuite
-        function escapeButton() {
-            const btn = document.getElementById('runaway-btn');
-            const newX = (Math.random() - 0.5) * 450;
-            const newY = (Math.random() - 0.5) * 250;
-            btn.style.transform = `translate(${newX}px, ${newY}px) rotate(${Math.random() * 40 - 20}deg)`;
-        }
-
-        // 3. Mode Machine à laver (fait tourner la page)
-        let spinning = false;
-        function spinEverything() {
-            spinning = !spinning;
-            document.body.style.transition = 'transform 2s cubic-bezier(0.68, -0.55, 0.27, 1.55)';
-            document.body.style.transform = spinning ? 'rotate(180deg) scale(0.85)' : 'rotate(0deg) scale(1)';
-        }
-
-        // 4. Popup Windows factice
-        function spawnPopup() {
-            const popup = document.getElementById('fakeWin');
-            popup.style.display = 'block';
-            popup.style.top = Math.floor(Math.random() * 50 + 20) + '%';
-            popup.style.left = Math.floor(Math.random() * 50 + 20) + '%';
-            playTone(200, 0.4, 'sawtooth');
-        }
-
-        function closePopup() {
-            document.getElementById('fakeWin').style.display = 'none';
-        }
-
-        // 5. Sons absurdes synthétisés via Web Audio (sans aucun fichier externe)
+        // 1. AudioContext partagé pour créer des sons atroces sans aucun fichier externe
+        let audioCtx = null;
         function getAudioContext() {
-            return new (window.AudioContext || window.webkitAudioContext)();
+            if (!audioCtx) {
+                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+            }
+            if (audioCtx.state === 'suspended') {
+                audioCtx.resume();
+            }
+            return audioCtx;
         }
 
-        function playTone(freq, duration, type = 'sine') {
+        // Bruit de glitch strident aléatoire à chaque clic sur l'écran
+        function playRandomCursedGlitch(e) {
+            if (e.target.tagName === 'BUTTON' || e.target.closest('#screamer-hell') || e.target.closest('#bsod-screen')) return;
             try {
                 const ctx = getAudioContext();
                 const osc = ctx.createOscillator();
                 const gain = ctx.createGain();
 
-                osc.type = type;
-                osc.frequency.setValueAtTime(freq, ctx.currentTime);
+                osc.type = 'sawtooth';
+                const f = Math.random() * 2000 + 400;
+                osc.frequency.setValueAtTime(f, ctx.currentTime);
+                osc.frequency.linearRampToValueAtTime(80, ctx.currentTime + 0.15);
 
-                gain.gain.setValueAtTime(0.2, ctx.currentTime);
-                gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + duration);
+                gain.gain.setValueAtTime(0.35, ctx.currentTime);
+                gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.15);
 
                 osc.connect(gain);
                 gain.connect(ctx.destination);
 
                 osc.start();
-                osc.stop(ctx.currentTime + duration);
+                osc.stop(ctx.currentTime + 0.15);
+            } catch(err) {}
+        }
+
+        // 2. Traînée infernale sous le curseur
+        const cursedIcons = ['👁️', '💀', '🩸', '👹', '☣️', '🔥', '🦟'];
+        document.addEventListener('mousemove', (e) => {
+            if (Math.random() > 0.6) {
+                const t = document.createElement('div');
+                t.className = 'cursed-trail';
+                t.innerText = cursedIcons[Math.floor(Math.random() * cursedIcons.length)];
+                t.style.left = e.clientX + 'px';
+                t.style.top = e.clientY + 'px';
+                document.body.appendChild(t);
+                setTimeout(() => t.remove(), 600);
+            }
+        });
+
+        // 3. Bouton insaisissable qui saute partout
+        function teleportButton() {
+            const b = document.getElementById('troll-target');
+            const rx = (Math.random() - 0.5) * 600;
+            const ry = (Math.random() - 0.5) * 350;
+            b.style.transform = `translate(${rx}px, ${ry}px) scale(${Math.random() * 0.8 + 0.6}) rotate(${Math.random() * 90 - 45}deg)`;
+        }
+
+        // 4. L'Hydre des fenêtres Windows (en fermer 1 en ouvre 2 !)
+        function spawnHydraPopup() {
+            createPopup();
+        }
+
+        function createPopup() {
+            const p = document.createElement('div');
+            p.className = 'fake-error';
+            p.style.top = Math.floor(Math.random() * 60 + 15) + '%';
+            p.style.left = Math.floor(Math.random() * 60 + 10) + '%';
+
+            p.innerHTML = `
+                <div class="fake-error-header">
+                    <span>⚠️ ERREUR FATALE</span>
+                    <span style="cursor:pointer; font-weight:bold;" onclick="killHydra(this)">✖</span>
+                </div>
+                <div class="fake-error-body">
+                    <p><b>ALERTE SYSTÈME :</b> La mayonnaise a corrompu vos barrettes de RAM !</p>
+                    <div style="text-align:right;">
+                        <button onclick="killHydra(this)" style="padding:4px 10px; cursor:pointer; font-weight:bold;">ANNULER</button>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(p);
+
+            // Bruit de bip Windows strident
+            try {
+                const ctx = getAudioContext();
+                const osc = ctx.createOscillator();
+                const g = ctx.createGain();
+                osc.type = 'square';
+                osc.frequency.setValueAtTime(800, ctx.currentTime);
+                g.gain.setValueAtTime(0.2, ctx.currentTime);
+                g.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.15);
+                osc.connect(g);
+                g.connect(ctx.destination);
+                osc.start();
+                osc.stop(ctx.currentTime + 0.15);
             } catch(e) {}
         }
 
-        function playRandomGoofySound(e) {
-            // Ne pas déclencher si on clique sur un bouton ou le screamer
-            if (e.target.tagName === 'BUTTON' || e.target.closest('#screamer-zone')) return;
-            const randomFreq = Math.floor(Math.random() * 700 + 150);
-            playTone(randomFreq, 0.15, 'square');
+        function killHydra(btn) {
+            const popup = btn.closest('.fake-error');
+            popup.remove();
+            // L'HYDRE : 1 fermée -> 2 créées !
+            setTimeout(() => {
+                createPopup();
+                createPopup();
+            }, 100);
         }
 
-        // 6. ULTRA SCREAMER : flashs violents + double oscillateur strident
-        let screamerActive = false;
-        function triggerUltraScreamer() {
-            if (screamerActive) return;
-            screamerActive = true;
+        // 5. Faux Écran Bleu BSOD
+        function triggerBsod() {
+            document.getElementById('bsod-screen').style.display = 'block';
+        }
+        function hideBsod() {
+            document.getElementById('bsod-screen').style.display = 'none';
+        }
 
-            const overlay = document.getElementById('screamer-zone');
-            overlay.style.display = 'flex';
+        // 6. Sirène nucléaire insupportable
+        let sirenLoop = null;
+        function toggleNuclearSiren() {
+            if (sirenLoop) {
+                clearInterval(sirenLoop);
+                sirenLoop = null;
+                return;
+            }
+            const ctx = getAudioContext();
+            let up = true;
+            sirenLoop = setInterval(() => {
+                try {
+                    const osc = ctx.createOscillator();
+                    const gain = ctx.createGain();
+                    osc.type = 'sawtooth';
+                    osc.frequency.setValueAtTime(up ? 450 : 900, ctx.currentTime);
+                    osc.frequency.exponentialRampToValueAtTime(up ? 900 : 450, ctx.currentTime + 0.25);
+                    gain.gain.setValueAtTime(0.3, ctx.currentTime);
+                    gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.25);
+                    osc.connect(gain);
+                    gain.connect(ctx.destination);
+                    osc.start();
+                    osc.stop(ctx.currentTime + 0.25);
+                    up = !up;
+                } catch(e) {}
+            }, 260);
+        }
 
-            // Son de cri perçant / alarme stridente
+        // 7. Filtre Inversé Démoniaque
+        let cursedOn = false;
+        function toggleCursedFilter() {
+            cursedOn = !cursedOn;
+            document.body.style.filter = cursedOn ? 'invert(1) hue-rotate(180deg) contrast(300%)' : 'none';
+        }
+
+        // 8. HYPER SCREAMER DÉCHIRANT
+        let screaming = false;
+        function triggerHyperScreamer() {
+            if (screaming) return;
+            screaming = true;
+
+            const sc = document.getElementById('screamer-hell');
+            sc.style.display = 'flex';
+
+            // Alarme stridente multi-oscillateurs saturée
             try {
                 const ctx = getAudioContext();
-                const osc1 = ctx.createOscillator();
-                const osc2 = ctx.createOscillator();
-                const gain = ctx.createGain();
+                const o1 = ctx.createOscillator();
+                const o2 = ctx.createOscillator();
+                const o3 = ctx.createOscillator();
+                const g = ctx.createGain();
 
-                osc1.type = 'sawtooth';
-                osc2.type = 'square';
+                o1.type = 'sawtooth';
+                o2.type = 'square';
+                o3.type = 'sawtooth';
 
-                osc1.frequency.setValueAtTime(950, ctx.currentTime);
-                osc1.frequency.exponentialRampToValueAtTime(80, ctx.currentTime + 2.5);
+                // Fréquences stridentes combinées
+                o1.frequency.setValueAtTime(1400, ctx.currentTime);
+                o1.frequency.exponentialRampToValueAtTime(50, ctx.currentTime + 2.8);
 
-                osc2.frequency.setValueAtTime(1600, ctx.currentTime);
-                osc2.frequency.exponentialRampToValueAtTime(60, ctx.currentTime + 2.5);
+                o2.frequency.setValueAtTime(1900, ctx.currentTime);
+                o2.frequency.exponentialRampToValueAtTime(30, ctx.currentTime + 2.8);
 
-                gain.gain.setValueAtTime(1.0, ctx.currentTime);
-                gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 2.5);
+                o3.frequency.setValueAtTime(250, ctx.currentTime);
+                o3.frequency.linearRampToValueAtTime(80, ctx.currentTime + 2.8);
 
-                osc1.connect(gain);
-                osc2.connect(gain);
-                gain.connect(ctx.destination);
+                g.gain.setValueAtTime(1.0, ctx.currentTime);
+                g.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 2.8);
 
-                osc1.start();
-                osc2.start();
-                osc1.stop(ctx.currentTime + 2.5);
-                osc2.stop(ctx.currentTime + 2.5);
+                o1.connect(g);
+                o2.connect(g);
+                o3.connect(g);
+                g.connect(ctx.destination);
+
+                o1.start();
+                o2.start();
+                o3.start();
+
+                o1.stop(ctx.currentTime + 2.8);
+                o2.stop(ctx.currentTime + 2.8);
+                o3.stop(ctx.currentTime + 2.8);
             } catch(e) {}
 
             setTimeout(() => {
-                overlay.style.display = 'none';
-                screamerActive = false;
-            }, 2500);
+                sc.style.display = 'none';
+                screaming = false;
+            }, 2800);
         }
     </script>
 </body>
