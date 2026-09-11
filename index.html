@@ -3,573 +3,551 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>☠️ LE DUO DU NÉANT : MATTCOUBETERGUES-DEL & FAZERDINO1 ☠️</title>
+    <title>Coubetergues & Fazerdino | Studio d'Ingénierie Logicielle</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --bg: #07080b;
+            --surface: #0f1117;
+            --surface-hover: #161922;
+            --border: rgba(255, 255, 255, 0.08);
+            --border-hover: rgba(255, 255, 255, 0.18);
+            --text-primary: #f3f4f6;
+            --text-secondary: #9ca3af;
+            --text-muted: #6b7280;
+            --accent: #6366f1;
+            --accent-light: #818cf8;
+            --accent-glow: rgba(99, 102, 241, 0.15);
+            --success: #10b981;
+        }
+
         * {
+            margin: 0;
+            padding: 0;
             box-sizing: border-box;
-            cursor: crosshair;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            scroll-behavior: smooth;
         }
 
         body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Comic Sans MS', 'Impact', fantasy, sans-serif;
-            background: repeating-radial-gradient(circle, #ff0000 0, #000 15px, #ffff00 30px, #00ff00 45px, #ff00ea 60px);
-            background-size: 130px 130px;
-            animation: seizureBg 0.28s linear infinite;
-            color: #fff;
-            text-align: center;
+            background-color: var(--bg);
+            color: var(--text-primary);
+            min-height: 100vh;
             overflow-x: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            letter-spacing: -0.01em;
+            line-height: 1.6;
         }
 
-        @keyframes seizureBg {
-            0% { background-position: 0 0; filter: hue-rotate(0deg); }
-            50% { filter: hue-rotate(180deg) invert(0.25); }
-            100% { background-position: 130px 130px; filter: hue-rotate(360deg); }
-        }
-
-        .marquee-hell {
-            background: #000;
-            color: #ff0000;
-            font-size: 2.1rem;
-            font-weight: 900;
-            padding: 10px;
-            border-top: 6px dashed #ffff00;
-            border-bottom: 6px dashed #00ffea;
-            text-shadow: 0 0 15px #ff0000, 0 0 25px #ffff00;
+        /* Lueur ambiante subtile */
+        .ambient-glow {
+            position: fixed;
+            top: -200px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1000px;
+            height: 600px;
+            background: radial-gradient(circle, var(--accent-glow) 0%, rgba(7, 8, 11, 0) 70%);
+            pointer-events: none;
+            z-index: 0;
         }
 
         header {
-            background: rgba(0, 0, 0, 0.92);
-            border: 12px double #00ff00;
-            max-width: 980px;
-            margin: 25px auto;
-            padding: 25px;
-            box-shadow: 0 0 60px #ff00ea, inset 0 0 40px #ffff00;
-            animation: shakeHard 0.07s infinite alternate;
-        }
-
-        @keyframes shakeHard {
-            0% { transform: translate(-4px, 4px) rotate(-1.5deg); }
-            100% { transform: translate(4px, -4px) rotate(1.5deg); }
-        }
-
-        h1 {
-            font-size: 3.2rem;
-            color: #ffff00;
-            text-shadow: 5px 5px 0 #ff0000, -5px -5px 0 #00ffff, 0 0 30px #fff;
-            letter-spacing: 2px;
-            margin: 0;
-            line-height: 1.2;
-        }
-
-        .toxic-tag {
-            font-size: 1.5rem;
-            background: #ff0000;
-            color: #ffff00;
-            display: inline-block;
-            padding: 6px 22px;
-            margin-top: 15px;
-            border: 4px solid #fff;
-            animation: pulseText 0.2s infinite alternate;
-        }
-
-        @keyframes pulseText {
-            from { transform: scale(0.96); background: #ff0000; }
-            to { transform: scale(1.05); background: #000; color: #00ffea; }
-        }
-
-        .nightmare-grid {
-            max-width: 980px;
-            margin: auto;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            gap: 30px;
-        }
-
-        .cursed-card {
-            background: rgba(20, 0, 0, 0.94);
-            border: 8px ridge #00ff00;
-            padding: 22px;
-            box-shadow: 14px 14px 0px #ff00ea;
-            position: relative;
-        }
-
-        .cursed-card h2 {
-            font-size: 2.2rem;
-            color: #00ffea;
-            text-shadow: 3px 3px 0 #ff0055;
-            margin-top: 0;
-        }
-
-        /* Cartes du duo de choc */
-        .duo-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-top: 15px;
-        }
-
-        .dev-box {
-            background: rgba(0, 0, 0, 0.85);
-            border: 5px dashed #ffff00;
-            padding: 18px;
-            box-shadow: 6px 6px 0 #ff0055;
-            text-align: left;
-        }
-
-        .dev-box h3 {
-            font-size: 1.7rem;
-            margin: 0 0 10px 0;
-            text-shadow: 2px 2px 0 red;
-        }
-
-        .btn-zone {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-        }
-
-        .btn-horror {
-            font-family: inherit;
-            font-size: 1.35rem;
-            font-weight: 900;
-            padding: 15px 24px;
-            border: 6px outset #fff;
-            cursor: pointer;
-            box-shadow: 8px 8px 0px #000;
-            transition: transform 0.05s;
-        }
-
-        .btn-horror:active {
-            border-style: inset;
-            transform: translate(4px, 4px);
-        }
-
-        .btn-bsod { background: #0078d7; color: #fff; }
-        .btn-fazerdino { background: #00ff66; color: #000; animation: dinoGlow 0.3s infinite alternate; }
-        .btn-fusion { background: #ff0055; color: #ffff00; font-size: 1.6rem; }
-        .btn-popup-spawn { background: #e02424; color: #fff; }
-
-        @keyframes dinoGlow {
-            0% { transform: scale(1); box-shadow: 0 0 10px #00ff66; }
-            100% { transform: scale(1.06); box-shadow: 0 0 35px #ffff00; }
-        }
-
-        #troll-target {
-            position: relative;
-            background: #ff00ea;
-            color: #fff;
-        }
-
-        .fake-error {
-            position: fixed;
-            width: 330px;
-            background: #ece9d8;
-            border: 3px solid #0055ea;
-            box-shadow: 10px 10px 30px rgba(0,0,0,0.9);
-            font-family: 'Tahoma', sans-serif;
-            text-align: left;
-            z-index: 99999;
-            color: #000;
-        }
-
-        .fake-error-header {
-            background: linear-gradient(90deg, #0055ea, #3f89ff);
-            color: #fff;
-            font-weight: bold;
-            padding: 4px 8px;
+            width: 100%;
+            max-width: 1100px;
+            padding: 2rem 1.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 0.9rem;
+            position: sticky;
+            top: 0;
+            background: rgba(7, 8, 11, 0.75);
+            backdrop-filter: blur(12px);
+            z-index: 50;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
         }
 
-        .fake-error-body {
-            padding: 15px;
+        .brand {
             font-size: 0.95rem;
-        }
-
-        #bsod-screen {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: #0078d7;
-            z-index: 9999999;
-            color: white;
-            font-family: 'Segoe UI', sans-serif;
-            text-align: left;
-            padding: 10vw;
-            box-sizing: border-box;
-        }
-
-        .cursed-trail {
-            position: fixed;
-            pointer-events: none;
-            font-size: 2.2rem;
-            z-index: 999999;
-            animation: trailFade 0.6s forwards;
-        }
-
-        @keyframes trailFade {
-            0% { opacity: 1; transform: scale(1) rotate(0deg); }
-            100% { opacity: 0; transform: scale(3) rotate(360deg); filter: blur(4px); }
-        }
-
-        #screamer-hell {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: #000;
-            z-index: 99999999;
-            flex-direction: column;
-            justify-content: center;
+            font-weight: 600;
+            display: flex;
             align-items: center;
-            animation: violentFlicker 0.03s infinite;
+            gap: 0.5rem;
+            color: var(--text-primary);
         }
 
-        @keyframes violentFlicker {
-            0% { background: #ff0000; transform: scale(1.08) rotate(3deg); }
-            25% { background: #000; transform: scale(0.92) rotate(-3deg); }
-            50% { background: #ffff00; transform: scale(1.12) rotate(2deg); }
-            75% { background: #fff; transform: scale(0.9) rotate(-2deg); }
-            100% { background: #ff00aa; transform: scale(1.05) rotate(0deg); }
+        .brand-dot {
+            width: 6px;
+            height: 6px;
+            background-color: var(--accent);
+            border-radius: 50%;
         }
 
-        .demon-face {
-            font-size: 20rem;
-            filter: drop-shadow(0 0 100px red) contrast(200%);
-            animation: faceSpasm 0.06s infinite alternate;
-            user-select: none;
+        nav {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
         }
 
-        @keyframes faceSpasm {
-            0% { transform: scale(0.8) rotate(-25deg); filter: invert(0); }
-            100% { transform: scale(1.6) rotate(25deg); filter: invert(1); }
+        nav a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-size: 0.88rem;
+            font-weight: 500;
+            transition: color 0.2s ease;
         }
 
-        .screamer-title-box {
-            font-size: 4rem;
-            font-weight: 900;
-            color: #ffff00;
-            background: #000;
-            border: 12px double red;
-            padding: 10px 30px;
-            letter-spacing: 5px;
+        nav a:hover {
+            color: var(--text-primary);
+        }
+
+        .status-pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            padding: 0.35rem 0.8rem;
+            background: rgba(16, 185, 129, 0.08);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            border-radius: 9999px;
+            font-size: 0.78rem;
+            font-weight: 500;
+            color: #34d399;
+        }
+
+        .status-dot {
+            width: 6px;
+            height: 6px;
+            background: var(--success);
+            border-radius: 50%;
+            box-shadow: 0 0 8px var(--success);
+        }
+
+        main {
+            width: 100%;
+            max-width: 1100px;
+            padding: 5rem 1.5rem 8rem;
+            display: flex;
+            flex-direction: column;
+            gap: 7rem;
+            z-index: 1;
+        }
+
+        /* Hero */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            gap: 1.8rem;
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            letter-spacing: -0.04em;
+            line-height: 1.15;
+            background: linear-gradient(180deg, #ffffff 40%, rgba(255, 255, 255, 0.55) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            color: var(--text-secondary);
+            font-size: 1.15rem;
+            max-width: 620px;
+            line-height: 1.7;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .btn {
+            padding: 0.75rem 1.6rem;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .btn-primary {
+            background: var(--text-primary);
+            color: var(--bg);
+            border: 1px solid transparent;
+        }
+
+        .btn-primary:hover {
+            opacity: 0.9;
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: var(--surface);
+            color: var(--text-primary);
+            border: 1px solid var(--border);
+        }
+
+        .btn-secondary:hover {
+            background: var(--surface-hover);
+            border-color: var(--border-hover);
+            transform: translateY(-1px);
+        }
+
+        /* Bento Grid */
+        .section-header {
+            margin-bottom: 2.5rem;
+        }
+
+        .section-header span {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            color: var(--accent-light);
             text-transform: uppercase;
+            letter-spacing: 0.08em;
+        }
+
+        .section-header h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            letter-spacing: -0.03em;
+            margin-top: 0.4rem;
+        }
+
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 1.25rem;
+        }
+
+        .card {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 2rem;
+            transition: border-color 0.2s ease, background-color 0.2s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card:hover {
+            border-color: var(--border-hover);
+            background: var(--surface-hover);
+        }
+
+        .card-col-6 { grid-column: span 6; }
+        .card-col-4 { grid-column: span 4; }
+        .card-col-8 { grid-column: span 8; }
+        .card-col-12 { grid-column: span 12; }
+
+        .dev-badge {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            padding: 0.25rem 0.6rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            border-radius: 6px;
+            color: var(--text-secondary);
+            display: inline-block;
+            margin-bottom: 1.2rem;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.6rem;
+            letter-spacing: -0.02em;
+        }
+
+        .card p {
+            color: var(--text-secondary);
+            font-size: 0.92rem;
+            line-height: 1.6;
+        }
+
+        .spec-list {
+            margin-top: 1.5rem;
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.6rem;
+        }
+
+        .spec-list li {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .spec-list li::before {
+            content: "";
+            width: 4px;
+            height: 4px;
+            background: var(--accent-light);
+            border-radius: 50%;
+        }
+
+        /* Console d'inspection */
+        .terminal-card {
+            background: #090a0f;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            font-family: 'JetBrains Mono', monospace;
+            padding: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .terminal-bar {
+            display: flex;
+            gap: 6px;
+            margin-bottom: 1rem;
+        }
+
+        .terminal-dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .terminal-content {
+            font-size: 0.82rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .terminal-content .cmd { color: var(--text-primary); }
+        .terminal-content .prop { color: var(--accent-light); }
+        .terminal-content .val { color: #34d399; }
+
+        /* Métriques */
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            width: 100%;
+        }
+
+        .metric-box {
+            padding: 1.5rem;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border);
+            text-align: left;
+        }
+
+        .metric-value {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            letter-spacing: -0.03em;
+        }
+
+        .metric-label {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+            margin-top: 0.3rem;
         }
 
         footer {
-            background: #000;
-            color: #ff0000;
-            padding: 30px;
-            font-size: 1.4rem;
-            border-top: 10px double #ffff00;
-            margin-top: 60px;
+            width: 100%;
+            max-width: 1100px;
+            padding: 3rem 1.5rem;
+            border-top: 1px solid var(--border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: var(--text-muted);
+            font-size: 0.82rem;
+            margin-top: auto;
+        }
+
+        @media (max-width: 768px) {
+            .bento-grid { display: flex; flex-direction: column; }
+            .metrics-grid { grid-template-columns: 1fr; }
+            header { flex-direction: column; gap: 1rem; align-items: flex-start; }
+            footer { flex-direction: column; gap: 1rem; align-items: flex-start; }
         }
     </style>
 </head>
-<body onclick="playRandomCursedGlitch(event)">
+<body>
 
-    <!-- OVERLAY SCREAMER ULTIME -->
-    <div id="screamer-hell">
-        <div class="demon-face">🦖</div>
-        <div class="screamer-title-box">FAZERDINO1 & MATT VOUS ONT DÉTRUIT !</div>
-    </div>
+    <div class="ambient-glow"></div>
 
-    <!-- FAUX ÉCRAN BLEU DE LA MORT -->
-    <div id="bsod-screen" onclick="hideBsod()">
-        <div style="font-size: 8rem; margin-bottom: 20px;">:(</div>
-        <div style="font-size: 2rem; margin-bottom: 25px;">Votre appareil a été pulvérisé par le duo mattcoubetergues-del & fazerdino1.</div>
-        <div style="font-size: 1.2rem; line-height: 1.8;">
-            Code d'arrêt : SURDOSE_DE_DEBILITE_CRITIQUE<br>
-            Fichier en échec : fazerdino1_cerveau_absent.sys<br><br>
-            <i>(Cliquez pour tenter de survivre)</i>
-        </div>
-    </div>
-
-    <!-- BANNIÈRE EN FOLIE -->
-    <div class="marquee-hell">
-        <marquee scrollamount="32" behavior="alternate">
-            🦖 ALERTE NATIONALE 🦖 MATTCOUBETERGUES-DEL ET FAZERDINO1 L'ULTRA DÉBILE S'ALLIENT 🦖 TOTAL DE CERVEAU : 0.0001% 🦖 PLANQUEZ VOS PC 🦖
-        </marquee>
-    </div>
-
-    <!-- HEADER DU DUO MAUDIT -->
     <header>
-        <h1>⚡ MATTCOUBETERGUES-DEL ⚡<br>& FAZERDINO1 L'ULTRA DÉBILE 🦖</h1>
-        <div class="toxic-tag">🔥 LES DEUX TERRORISTES DU WEB RÉUNIS ENFIN SUR UN SEUL SITE 🔥</div>
-        <p style="font-size: 1.5rem; margin-top: 15px; color: #00ffea; font-weight: bold;">
-            Ils ont combiné leurs forces pour programmer le code le plus illégal et hideux de la planète.
-        </p>
+        <div class="brand">
+            <span class="brand-dot"></span>
+            Coubetergues & Fazerdino
+        </div>
+        <nav>
+            <a href="#ingenieurs">Ingénieurs</a>
+            <a href="#systemes">Systèmes</a>
+            <a href="#inspection">Console</a>
+            <div class="status-pill">
+                <span class="status-dot"></span>
+                Services Opérationnels
+            </div>
+        </nav>
     </header>
 
-    <div class="nightmare-grid">
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <h1>Ingénierie logicielle & architectures distribuées.</h1>
+            <p>
+                Conception d'écosystèmes applicatifs résilients, d'infrastructures réseaux optimisées et d'interfaces web réactives à haute fidélité.
+            </p>
+            <div class="hero-actions">
+                <a href="#systemes" class="btn btn-primary">Explorer les réalisations</a>
+                <a href="#inspection" class="btn btn-secondary">Console système</a>
+            </div>
+        </section>
 
-        <!-- PRÉSENTATION DES DEUX CRÉTINS -->
-        <div class="cursed-card">
-            <h2>👥 QUI SONT CES DEUX LÉGENDES FOIREUSES ?</h2>
-            <div class="duo-container">
-                <div class="dev-box">
-                    <h3 style="color:#00e1ff;">👑 mattcoubetergues-del</h3>
-                    <p><b>Poste :</b> Ministre de la Mayonnaise & Destructeur de serveurs</p>
-                    <p><b>Spécialité :</b> Tape sur son écran avec des baguettes chinoises pour coder en Python.</p>
-                    <p><b>QI estimé :</b> Équivalent à une brique creuse.</p>
-                </div>
-
-                <div class="dev-box" style="border-color: #00ff66;">
-                    <h3 style="color:#00ff66;">🦖 fazerdino1 l'ultra débile</h3>
-                    <p><b>Poste :</b> Dresseur de T-Rex en carton & Maître Suprême du Lag</p>
-                    <p><b>Spécialité :</b> Code directement en grognements préhistoriques et tape la barre espace avec son front.</p>
-                    <p><b>QI estimé :</b> En dessous de zéro absolu (-273,15°C).</p>
-                </div>
+        <!-- Métriques -->
+        <div class="metrics-grid">
+            <div class="metric-box">
+                <div class="metric-value">99.98%</div>
+                <div class="metric-label">Disponibilité globale de service</div>
+            </div>
+            <div class="metric-box">
+                <div class="metric-value">&lt; 14ms</div>
+                <div class="metric-label">Latence moyenne de traitement</div>
+            </div>
+            <div class="metric-box">
+                <div class="metric-value">Zero-Trust</div>
+                <div class="metric-label">Architecture sécurisée par conception</div>
             </div>
         </div>
 
-        <!-- PIÈGE SCREAMER DUO -->
-        <div class="cursed-card" style="border-color: red; cursor: pointer;" onclick="triggerHyperScreamer()">
-            <h2 style="color: yellow; animation: pulseText 0.15s infinite alternate;">⚠️ DÉFI : CLIQUE POUR PROUVER QUE TU ES MOINS BÊTE QU'EUX ⚠️</h2>
-            <p style="font-size: 1.5rem; font-weight: 900;">[ ATTENTION : 100% DE CHANCES D'EXPLOSER ]</p>
-        </div>
-
-        <!-- CONSOLE DU BORDEL MONUMENTAL -->
-        <div class="cursed-card">
-            <h2>💣 LE PUPITRE DES CATASTROPHES</h2>
-            <div class="btn-zone">
-                <button class="btn-horror btn-fazerdino" onclick="playDinoRoar()">
-                    🦖 POUSSER LE CRI DE FAZERDINO1
-                </button>
-
-                <button class="btn-horror btn-fusion" onclick="triggerHyperScreamer()">
-                    💥 FUSIONNER LES 2 CERVEAUX (FATAL)
-                </button>
-
-                <button class="btn-horror btn-bsod" onclick="triggerBsod()">
-                    💻 PLANTER L'ORDINATEUR
-                </button>
-
-                <button class="btn-horror btn-popup-spawn" onclick="spawnHydraPopup()">
-                    🦠 LÂCHER L'HYDRE DES POPUPS
-                </button>
-
-                <!-- Bouton qui se téléporte -->
-                <button id="troll-target" class="btn-horror" onmouseover="teleportButton()">
-                    🏃 ATTRAPE FAZERDINO1 AVANT QU'IL FORMATE TON PC
-                </button>
+        <!-- Section Les Ingénieurs -->
+        <section id="ingenieurs">
+            <div class="section-header">
+                <span>Fondateurs & Profils</span>
+                <h2>L'équipe d'ingénierie</h2>
             </div>
-        </div>
 
-        <!-- LEURS FAITS D'ARMES ABSURDES -->
-        <div class="cursed-card" style="transform: rotate(1deg);">
-            <h2>📜 LES EXPLOITS DU DUO DE CHOC</h2>
-            <ul style="list-style: '🦖 '; text-align: left; font-size: 1.35rem; line-height: 2.2; color: #ffeb3b;">
-                <li>Fazerdino1 a confondu sa carte graphique avec une tranche de jambon et a essayé de la beurrer.</li>
-                <li>Matt a essayé de brancher un câble HDMI directement dans une pomme de terre pour avoir la 8K.</li>
-                <li>À eux deux, ils ont réussi à faire bugger la calculatrice de Windows en tapant 1 + 1.</li>
-                <li>Leurs ordinateurs chauffent tellement qu'ils font cuire des merguez dessus pendant qu'ils jouent.</li>
-            </ul>
-        </div>
+            <div class="bento-grid">
+                <div class="card card-col-6">
+                    <span class="dev-badge">ARCHITECTE LOGICIEL</span>
+                    <h3>Matt Coubetergues-Del</h3>
+                    <p>
+                        Spécialiste de la conception full-stack, de la modélisation de bases de données et des architectures modulaires. Accent fort porté sur la rigueur du code, l'expérience utilisateur et les performances des APIs critiques.
+                    </p>
+                    <ul class="spec-list">
+                        <li>Développement d'interfaces asynchrones</li>
+                        <li>Intégration d'APIs RESTful & architectures événementielles</li>
+                        <li>Optimisation de la chaîne de compilation et delivery</li>
+                    </ul>
+                </div>
 
-    </div>
+                <div class="card card-col-6">
+                    <span class="dev-badge">SYSTÈMES & RÉSEAUX</span>
+                    <h3>Fazerdino</h3>
+                    <p>
+                        Ingénieur systèmes axé sur la gestion des flux réseaux, l'administration de clusters et la virtualisation. Focalisé sur la mise à l'échelle, les protocoles bas-niveau et la stabilité des services distribués.
+                    </p>
+                    <ul class="spec-list">
+                        <li>Déploiement et orchestration d'infrastructures</li>
+                        <li>Protocoles réseaux, tunnels chiffrés et reverse proxy</li>
+                        <li>Automatisation de scripts et conteneurisation</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Section Systèmes & Piliers -->
+        <section id="systemes">
+            <div class="section-header">
+                <span>Domaines d'intervention</span>
+                <h2>Piliers technologiques</h2>
+            </div>
+
+            <div class="bento-grid">
+                <div class="card card-col-8">
+                    <span class="dev-badge">INFRASTRUCTURE</span>
+                    <h3>Réseaux distribués & Reverse Proxy</h3>
+                    <p>
+                        Routage dynamique, équilibrage de charge et gestion des certificats automatisés garantissant une tolérance aux pannes optimale et une diffusion mondiale continue.
+                    </p>
+                </div>
+
+                <div class="card card-col-4">
+                    <span class="dev-badge">PERFORMANCE</span>
+                    <h3>Calcul & Faible Latence</h3>
+                    <p>
+                        Optimisation des algorithmes et élimination des goulets d'étranglement pour les environnements à forte concurrence.
+                    </p>
+                </div>
+
+                <div class="card card-col-4">
+                    <span class="dev-badge">SÉCURITÉ</span>
+                    <h3>Contrôle d'Accès & Chiffrement</h3>
+                    <p>
+                        Mise en place de passerelles d'authentification cryptographiques et de politiques d'isolement strictes.
+                    </p>
+                </div>
+
+                <div class="card card-col-8">
+                    <span class="dev-badge">FRONT-END</span>
+                    <h3>Interfaces Réactives Haut Débit</h3>
+                    <p>
+                        Conception visuelle minimale, respectant scrupuleusement la fluidité des micro-interactions, l'accessibilité et la réactivité multi-supports.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Console Système -->
+        <section id="inspection">
+            <div class="section-header">
+                <span>Diagnostic en direct</span>
+                <h2>Inspection de l'environnement</h2>
+            </div>
+
+            <div class="terminal-card">
+                <div class="terminal-bar">
+                    <div class="terminal-dot"></div>
+                    <div class="terminal-dot"></div>
+                    <div class="terminal-dot"></div>
+                </div>
+                <div class="terminal-content">
+                    <div><span class="cmd">$</span> sys-inspect --target coubetergues-fazerdino --env production</div>
+                    <div style="margin-top: 0.5rem;"><span class="prop">[cluster]</span> : 2 nœuds actifs (mattcoubetergues-del, fazerdino)</div>
+                    <div><span class="prop">[statut]</span>  : <span class="val">Opérationnel (SYN_SENT: 0, ESTABLISHED: 100%)</span></div>
+                    <div><span class="prop">[runtime]</span> : Moteur hybride haute performance / Zero critical error</div>
+                    <div><span class="prop">[chiffrement]</span> : TLS 1.3 / Chiffrement de bout en bout actif</div>
+                    <div style="margin-top: 0.5rem;"><span class="cmd">$</span> <span id="cursor-type">Système prêt pour toute nouvelle intégration._</span></div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer>
-        <p>☠️ PROJET MATTCOUBETERGUES-DEL & FAZERDINO1 L'ULTRA DÉBILE ☠️</p>
-        <p style="font-size:1.1rem; color:yellow;">Garantie 0% de remboursement en cas de traumatisme sonore.</p>
+        <div>© 2026 Coubetergues & Fazerdino. Tous droits réservés.</div>
+        <div>Ingénierie logicielle & Systèmes fiables.</div>
     </footer>
 
     <script>
-        let audioCtx = null;
-        function getAudioContext() {
-            if (!audioCtx) {
-                audioCtx = new (window.AudioContext || window.webkitAudioContext)();
-            }
-            if (audioCtx.state === 'suspended') {
-                audioCtx.resume();
-            }
-            return audioCtx;
-        }
-
-        // Bruitage de glitch aléatoire au clic n'importe où
-        function playRandomCursedGlitch(e) {
-            if (e.target.tagName === 'BUTTON' || e.target.closest('#screamer-hell') || e.target.closest('#bsod-screen')) return;
-            try {
-                const ctx = getAudioContext();
-                const osc = ctx.createOscillator();
-                const gain = ctx.createGain();
-
-                osc.type = 'sawtooth';
-                const f = Math.random() * 2200 + 350;
-                osc.frequency.setValueAtTime(f, ctx.currentTime);
-                osc.frequency.linearRampToValueAtTime(70, ctx.currentTime + 0.15);
-
-                gain.gain.setValueAtTime(0.35, ctx.currentTime);
-                gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.15);
-
-                osc.connect(gain);
-                gain.connect(ctx.destination);
-
-                osc.start();
-                osc.stop(ctx.currentTime + 0.15);
-            } catch(err) {}
-        }
-
-        // Cri de dinosaure 8-bit saturé pour Fazerdino1
-        function playDinoRoar() {
-            try {
-                const ctx = getAudioContext();
-                const osc = ctx.createOscillator();
-                const gain = ctx.createGain();
-
-                osc.type = 'sawtooth';
-                osc.frequency.setValueAtTime(250, ctx.currentTime);
-                osc.frequency.linearRampToValueAtTime(80, ctx.currentTime + 0.4);
-                osc.frequency.linearRampToValueAtTime(30, ctx.currentTime + 0.9);
-
-                gain.gain.setValueAtTime(0.6, ctx.currentTime);
-                gain.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.9);
-
-                osc.connect(gain);
-                gain.connect(ctx.destination);
-
-                osc.start();
-                osc.stop(ctx.currentTime + 0.9);
-                alert("🦖 FAZERDINO1 A RUGI : 'GROUAAAAAAR (J'AI FAIM)' !");
-            } catch(e) {}
-        }
-
-        // Traînée de dinosaures, crânes et bananes
-        const cursedIcons = ['🦖', '💀', '🍌', '🤡', '🩸', '💩', '🔥', '🍗'];
-        document.addEventListener('mousemove', (e) => {
-            if (Math.random() > 0.62) {
-                const t = document.createElement('div');
-                t.className = 'cursed-trail';
-                t.innerText = cursedIcons[Math.floor(Math.random() * cursedIcons.length)];
-                t.style.left = e.clientX + 'px';
-                t.style.top = e.clientY + 'px';
-                document.body.appendChild(t);
-                setTimeout(() => t.remove(), 600);
-            }
-        });
-
-        // Téléportation du bouton insaisissable
-        function teleportButton() {
-            const b = document.getElementById('troll-target');
-            const rx = (Math.random() - 0.5) * 600;
-            const ry = (Math.random() - 0.5) * 350;
-            b.style.transform = `translate(${rx}px, ${ry}px) scale(${Math.random() * 0.8 + 0.6}) rotate(${Math.random() * 90 - 45}deg)`;
-        }
-
-        // Hydre de fenêtres Windows
-        function spawnHydraPopup() {
-            createPopup();
-        }
-
-        function createPopup() {
-            const p = document.createElement('div');
-            p.className = 'fake-error';
-            p.style.top = Math.floor(Math.random() * 60 + 15) + '%';
-            p.style.left = Math.floor(Math.random() * 60 + 10) + '%';
-
-            p.innerHTML = `
-                <div class="fake-error-header">
-                    <span>⚠️ ERREUR FAZERDINO1</span>
-                    <span style="cursor:pointer; font-weight:bold;" onclick="killHydra(this)">✖</span>
-                </div>
-                <div class="fake-error-body">
-                    <p><b>ALERTE CRITIQUE :</b> Fazerdino1 a mangé la souris de votre ordinateur !</p>
-                    <div style="text-align:right;">
-                        <button onclick="killHydra(this)" style="padding:4px 10px; cursor:pointer; font-weight:bold;">ANNULER</button>
-                    </div>
-                </div>
-            `;
-            document.body.appendChild(p);
-
-            try {
-                const ctx = getAudioContext();
-                const osc = ctx.createOscillator();
-                const g = ctx.createGain();
-                osc.type = 'square';
-                osc.frequency.setValueAtTime(800, ctx.currentTime);
-                g.gain.setValueAtTime(0.25, ctx.currentTime);
-                g.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 0.15);
-                osc.connect(g);
-                g.connect(ctx.destination);
-                osc.start();
-                osc.stop(ctx.currentTime + 0.15);
-            } catch(e) {}
-        }
-
-        function killHydra(btn) {
-            const popup = btn.closest('.fake-error');
-            popup.remove();
-            setTimeout(() => {
-                createPopup();
-                createPopup();
-            }, 100);
-        }
-
-        // BSOD
-        function triggerBsod() {
-            document.getElementById('bsod-screen').style.display = 'block';
-        }
-        function hideBsod() {
-            document.getElementById('bsod-screen').style.display = 'none';
-        }
-
-        // ULTRA SCREAMER
-        let screaming = false;
-        function triggerHyperScreamer() {
-            if (screaming) return;
-            screaming = true;
-
-            const sc = document.getElementById('screamer-hell');
-            sc.style.display = 'flex';
-
-            try {
-                const ctx = getAudioContext();
-                const o1 = ctx.createOscillator();
-                const o2 = ctx.createOscillator();
-                const o3 = ctx.createOscillator();
-                const g = ctx.createGain();
-
-                o1.type = 'sawtooth';
-                o2.type = 'square';
-                o3.type = 'sawtooth';
-
-                o1.frequency.setValueAtTime(1500, ctx.currentTime);
-                o1.frequency.exponentialRampToValueAtTime(50, ctx.currentTime + 2.8);
-
-                o2.frequency.setValueAtTime(2100, ctx.currentTime);
-                o2.frequency.exponentialRampToValueAtTime(30, ctx.currentTime + 2.8);
-
-                o3.frequency.setValueAtTime(300, ctx.currentTime);
-                o3.frequency.linearRampToValueAtTime(70, ctx.currentTime + 2.8);
-
-                g.gain.setValueAtTime(1.0, ctx.currentTime);
-                g.gain.exponentialRampToValueAtTime(0.01, ctx.currentTime + 2.8);
-
-                o1.connect(g);
-                o2.connect(g);
-                o3.connect(g);
-                g.connect(ctx.destination);
-
-                o1.start();
-                o2.start();
-                o3.start();
-
-                o1.stop(ctx.currentTime + 2.8);
-                o2.stop(ctx.currentTime + 2.8);
-                o3.stop(ctx.currentTime + 2.8);
-            } catch(e) {}
-
-            setTimeout(() => {
-                sc.style.display = 'none';
-                screaming = false;
-            }, 2800);
-        }
+        // Effet de frappe minimaliste dans la console
+        const cursorElement = document.getElementById('cursor-type');
+        let blink = true;
+        setInterval(() => {
+            blink = !blink;
+            cursorElement.style.opacity = blink ? '1' : '0.4';
+        }, 500);
     </script>
 </body>
 </html>
